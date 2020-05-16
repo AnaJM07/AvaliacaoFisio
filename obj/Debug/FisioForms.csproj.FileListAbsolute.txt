@@ -1,0 +1,10 @@
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.csprojAssemblyReference.cache
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.Fisio.resources
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.Properties.Resources.resources
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.csproj.GenerateResource.cache
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.csproj.CoreCompileInputs.cache
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\bin\Debug\FisioForms.exe.config
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\bin\Debug\FisioForms.exe
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\bin\Debug\FisioForms.pdb
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.exe
+C:\Users\Note I5\source\repos\FisioForms\FisioForms\obj\Debug\FisioForms.pdb
