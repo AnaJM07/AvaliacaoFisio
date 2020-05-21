@@ -195,3 +195,5 @@ C:\Users\Silva\Desktop\FisioForms\FisioForms\bin\Debug\EntityFramework.dll
 C:\Users\Silva\Desktop\FisioForms\FisioForms\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Silva\Desktop\FisioForms\FisioForms\bin\Debug\EntityFramework.xml
 C:\Users\Silva\Desktop\FisioForms\FisioForms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Silva\Desktop\FisioForms\obj\Debug\FisioForms.exe
+C:\Users\Silva\Desktop\FisioForms\obj\Debug\FisioForms.pdb

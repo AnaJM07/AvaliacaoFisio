@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisioForms", "FisioForms\FisioForms.csproj", "{72F85FCB-58B2-402C-A560-E9C10CF64996}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisioForms", "FisioForms.csproj", "{72F85FCB-58B2-402C-A560-E9C10CF64996}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
