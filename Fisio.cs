@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace FisioForms
 {
     public partial class Fisio : Form
     {
+        Paciente objPaciente;
+        Adm_Cervical objAdmCervical;
+        Ombro objOmbro;
         public Fisio()
         {
             InitializeComponent();
+            objPaciente = new Paciente();
+            objAdmCervical = new Adm_Cervical();
+            objOmbro = new Ombro();
+
+            pacienteBindingSource.DataSource = objPaciente;
+            OmbroBindingSource.DataSource = objOmbro;
         }
 
         private void adm_CervicalBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -33,20 +36,22 @@ namespace FisioForms
             this.adm_CervicalTableAdapter.Fill(this.masterDataSet.Adm_Cervical);
 
         }
+        
 
-        private void flexao_DireitaLabel_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
+            Context _context = new Context();
+            _context.Paciente.Add(objPaciente);
+            _context.Adm_Cervical.Add(objAdmCervical);
+            _context.Ombro.Add(objOmbro);
 
+            _context.SaveChanges();
         }
 
-        private void flexao_DireitaTextBox5_TextChanged(object sender, EventArgs e)
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtRotInemaE_TextChanged(object sender, EventArgs e)
-        {
-
+         
         }
     }
 }
