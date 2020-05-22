@@ -3662,6 +3662,8 @@ namespace FisioForms {
             
             private global::System.Data.DataColumn columnhma;
             
+            private global::System.Data.DataColumn columnantoponetria;
+            
             private global::System.Data.DataColumn columnpeso;
             
             private global::System.Data.DataColumn columnaltura;
@@ -3800,6 +3802,14 @@ namespace FisioForms {
             public global::System.Data.DataColumn hmaColumn {
                 get {
                     return this.columnhma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn antoponetriaColumn {
+                get {
+                    return this.columnantoponetria;
                 }
             }
             
@@ -4024,6 +4034,7 @@ namespace FisioForms {
                         string diagnostico, 
                         string qxPrincipal, 
                         string hma, 
+                        string antoponetria, 
                         int peso, 
                         decimal altura, 
                         int fc, 
@@ -4056,6 +4067,7 @@ namespace FisioForms {
                         diagnostico,
                         qxPrincipal,
                         hma,
+                        antoponetria,
                         peso,
                         altura,
                         fc,
@@ -4115,6 +4127,7 @@ namespace FisioForms {
                 this.columndiagnostico = base.Columns["diagnostico"];
                 this.columnqxPrincipal = base.Columns["qxPrincipal"];
                 this.columnhma = base.Columns["hma"];
+                this.columnantoponetria = base.Columns["antoponetria"];
                 this.columnpeso = base.Columns["peso"];
                 this.columnaltura = base.Columns["altura"];
                 this.columnfc = base.Columns["fc"];
@@ -4158,6 +4171,8 @@ namespace FisioForms {
                 base.Columns.Add(this.columnqxPrincipal);
                 this.columnhma = new global::System.Data.DataColumn("hma", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhma);
+                this.columnantoponetria = new global::System.Data.DataColumn("antoponetria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnantoponetria);
                 this.columnpeso = new global::System.Data.DataColumn("peso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso);
                 this.columnaltura = new global::System.Data.DataColumn("altura", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -4216,6 +4231,7 @@ namespace FisioForms {
                 this.columndiagnostico.MaxLength = 255;
                 this.columnqxPrincipal.MaxLength = 255;
                 this.columnhma.MaxLength = 500;
+                this.columnantoponetria.MaxLength = 255;
                 this.columnpa.MaxLength = 255;
                 this.columnestadoGeral.MaxLength = 255;
                 this.columnlocomocao.MaxLength = 255;
@@ -8732,6 +8748,22 @@ namespace FisioForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string antoponetria {
+                get {
+                    try {
+                        return ((string)(this[this.tablePaciente.antoponetriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'antoponetria\' na tabela \'Paciente\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaciente.antoponetriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int peso {
                 get {
                     try {
@@ -9164,6 +9196,18 @@ namespace FisioForms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SethmaNull() {
                 this[this.tablePaciente.hmaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsantoponetriaNull() {
+                return this.IsNull(this.tablePaciente.antoponetriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetantoponetriaNull() {
+                this[this.tablePaciente.antoponetriaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17148,6 +17192,7 @@ SELECT id, Flexao_Direita, Flexao_Esquerda, Flexao_Parametro, Flexao_Conclusao, 
             tableMapping.ColumnMappings.Add("diagnostico", "diagnostico");
             tableMapping.ColumnMappings.Add("qxPrincipal", "qxPrincipal");
             tableMapping.ColumnMappings.Add("hma", "hma");
+            tableMapping.ColumnMappings.Add("antoponetria", "antoponetria");
             tableMapping.ColumnMappings.Add("peso", "peso");
             tableMapping.ColumnMappings.Add("altura", "altura");
             tableMapping.ColumnMappings.Add("fc", "fc");
@@ -17173,41 +17218,43 @@ SELECT id, Flexao_Direita, Flexao_Esquerda, Flexao_Parametro, Flexao_Conclusao, 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Paciente] WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 AND [n" +
-                "ome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_responsavel = 1 AND [r" +
-                "esponsavel] IS NULL) OR ([responsavel] = @Original_responsavel)) AND ((@IsNull_s" +
-                "exo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_dtNascim" +
-                "ento = 1 AND [dtNascimento] IS NULL) OR ([dtNascimento] = @Original_dtNascimento" +
-                ")) AND ((@IsNull_diagnostico = 1 AND [diagnostico] IS NULL) OR ([diagnostico] = " +
-                "@Original_diagnostico)) AND ((@IsNull_qxPrincipal = 1 AND [qxPrincipal] IS NULL)" +
-                " OR ([qxPrincipal] = @Original_qxPrincipal)) AND ((@IsNull_hma = 1 AND [hma] IS " +
-                "NULL) OR ([hma] = @Original_hma)) AND ((@IsNull_peso = 1 AND [peso] IS NULL) OR " +
-                "([peso] = @Original_peso)) AND ((@IsNull_altura = 1 AND [altura] IS NULL) OR ([a" +
-                "ltura] = @Original_altura)) AND ((@IsNull_fc = 1 AND [fc] IS NULL) OR ([fc] = @O" +
-                "riginal_fc)) AND ((@IsNull_fr = 1 AND [fr] IS NULL) OR ([fr] = @Original_fr)) AN" +
-                "D ((@IsNull_pa = 1 AND [pa] IS NULL) OR ([pa] = @Original_pa)) AND ((@IsNull_est" +
-                "adoGeral = 1 AND [estadoGeral] IS NULL) OR ([estadoGeral] = @Original_estadoGera" +
-                "l)) AND ((@IsNull_locomocao = 1 AND [locomocao] IS NULL) OR ([locomocao] = @Orig" +
-                "inal_locomocao)) AND ((@IsNull_inspecao = 1 AND [inspecao] IS NULL) OR ([inspeca" +
-                "o] = @Original_inspecao)) AND ((@IsNull_palpacao = 1 AND [palpacao] IS NULL) OR " +
-                "([palpacao] = @Original_palpacao)) AND ((@IsNull_forcaMuscular = 1 AND [forcaMus" +
-                "cular] IS NULL) OR ([forcaMuscular] = @Original_forcaMuscular)) AND ((@IsNull_en" +
-                "dereco = 1 AND [endereco] IS NULL) OR ([endereco] = @Original_endereco)) AND ((@" +
-                "IsNull_cidade = 1 AND [cidade] IS NULL) OR ([cidade] = @Original_cidade)) AND ((" +
-                "@IsNull_telefone = 1 AND [telefone] IS NULL) OR ([telefone] = @Original_telefone" +
-                ")) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) " +
-                "AND ((@IsNull_dor = 1 AND [dor] IS NULL) OR ([dor] = @Original_dor)) AND ((@IsNu" +
-                "ll_cirurgiaPrevias = 1 AND [cirurgiaPrevias] IS NULL) OR ([cirurgiaPrevias] = @O" +
-                "riginal_cirurgiaPrevias)) AND ((@IsNull_medicamentos = 1 AND [medicamentos] IS N" +
-                "ULL) OR ([medicamentos] = @Original_medicamentos)) AND ((@IsNull_terapiasPrevias" +
-                " = 1 AND [terapiasPrevias] IS NULL) OR ([terapiasPrevias] = @Original_terapiasPr" +
-                "evias)) AND ((@IsNull_terapiasConcomitantes = 1 AND [terapiasConcomitantes] IS N" +
-                "ULL) OR ([terapiasConcomitantes] = @Original_terapiasConcomitantes)) AND ((@IsNu" +
-                "ll_examesComplementares = 1 AND [examesComplementares] IS NULL) OR ([examesCompl" +
-                "ementares] = @Original_examesComplementares)) AND ((@IsNull_DiagnosticoFisiotera" +
-                "peutico = 1 AND [DiagnosticoFisioterapeutico] IS NULL) OR ([DiagnosticoFisiotera" +
-                "peutico] = @Original_DiagnosticoFisioterapeutico)) AND ((@IsNull_Objetivo = 1 AN" +
-                "D [Objetivo] IS NULL) OR ([Objetivo] = @Original_Objetivo)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Paciente] WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 " +
+                "AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_responsavel = 1 " +
+                "AND [responsavel] IS NULL) OR ([responsavel] = @Original_responsavel)) AND ((@Is" +
+                "Null_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_dt" +
+                "Nascimento = 1 AND [dtNascimento] IS NULL) OR ([dtNascimento] = @Original_dtNasc" +
+                "imento)) AND ((@IsNull_diagnostico = 1 AND [diagnostico] IS NULL) OR ([diagnosti" +
+                "co] = @Original_diagnostico)) AND ((@IsNull_qxPrincipal = 1 AND [qxPrincipal] IS" +
+                " NULL) OR ([qxPrincipal] = @Original_qxPrincipal)) AND ((@IsNull_hma = 1 AND [hm" +
+                "a] IS NULL) OR ([hma] = @Original_hma)) AND ((@IsNull_antoponetria = 1 AND [anto" +
+                "ponetria] IS NULL) OR ([antoponetria] = @Original_antoponetria)) AND ((@IsNull_p" +
+                "eso = 1 AND [peso] IS NULL) OR ([peso] = @Original_peso)) AND ((@IsNull_altura =" +
+                " 1 AND [altura] IS NULL) OR ([altura] = @Original_altura)) AND ((@IsNull_fc = 1 " +
+                "AND [fc] IS NULL) OR ([fc] = @Original_fc)) AND ((@IsNull_fr = 1 AND [fr] IS NUL" +
+                "L) OR ([fr] = @Original_fr)) AND ((@IsNull_pa = 1 AND [pa] IS NULL) OR ([pa] = @" +
+                "Original_pa)) AND ((@IsNull_estadoGeral = 1 AND [estadoGeral] IS NULL) OR ([esta" +
+                "doGeral] = @Original_estadoGeral)) AND ((@IsNull_locomocao = 1 AND [locomocao] I" +
+                "S NULL) OR ([locomocao] = @Original_locomocao)) AND ((@IsNull_inspecao = 1 AND [" +
+                "inspecao] IS NULL) OR ([inspecao] = @Original_inspecao)) AND ((@IsNull_palpacao " +
+                "= 1 AND [palpacao] IS NULL) OR ([palpacao] = @Original_palpacao)) AND ((@IsNull_" +
+                "forcaMuscular = 1 AND [forcaMuscular] IS NULL) OR ([forcaMuscular] = @Original_f" +
+                "orcaMuscular)) AND ((@IsNull_endereco = 1 AND [endereco] IS NULL) OR ([endereco]" +
+                " = @Original_endereco)) AND ((@IsNull_cidade = 1 AND [cidade] IS NULL) OR ([cida" +
+                "de] = @Original_cidade)) AND ((@IsNull_telefone = 1 AND [telefone] IS NULL) OR (" +
+                "[telefone] = @Original_telefone)) AND ((@IsNull_email = 1 AND [email] IS NULL) O" +
+                "R ([email] = @Original_email)) AND ((@IsNull_dor = 1 AND [dor] IS NULL) OR ([dor" +
+                "] = @Original_dor)) AND ((@IsNull_cirurgiaPrevias = 1 AND [cirurgiaPrevias] IS N" +
+                "ULL) OR ([cirurgiaPrevias] = @Original_cirurgiaPrevias)) AND ((@IsNull_medicamen" +
+                "tos = 1 AND [medicamentos] IS NULL) OR ([medicamentos] = @Original_medicamentos)" +
+                ") AND ((@IsNull_terapiasPrevias = 1 AND [terapiasPrevias] IS NULL) OR ([terapias" +
+                "Previas] = @Original_terapiasPrevias)) AND ((@IsNull_terapiasConcomitantes = 1 A" +
+                "ND [terapiasConcomitantes] IS NULL) OR ([terapiasConcomitantes] = @Original_tera" +
+                "piasConcomitantes)) AND ((@IsNull_examesComplementares = 1 AND [examesComplement" +
+                "ares] IS NULL) OR ([examesComplementares] = @Original_examesComplementares)) AND" +
+                " ((@IsNull_DiagnosticoFisioterapeutico = 1 AND [DiagnosticoFisioterapeutico] IS " +
+                "NULL) OR ([DiagnosticoFisioterapeutico] = @Original_DiagnosticoFisioterapeutico)" +
+                ") AND ((@IsNull_Objetivo = 1 AND [Objetivo] IS NULL) OR ([Objetivo] = @Original_" +
+                "Objetivo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -17224,6 +17271,8 @@ SELECT id, Flexao_Direita, Flexao_Esquerda, Flexao_Parametro, Flexao_Conclusao, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_qxPrincipal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qxPrincipal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hma", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hma", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_antoponetria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "antoponetria", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_antoponetria", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "antoponetria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_peso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_peso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_altura", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "altura", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -17270,8 +17319,8 @@ SELECT id, Flexao_Direita, Flexao_Esquerda, Flexao_Parametro, Flexao_Conclusao, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Objetivo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Objetivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Paciente] ([nome], [responsavel], [sexo], [dtNascimento], [diagnostico], [qxPrincipal], [hma], [peso], [altura], [fc], [fr], [pa], [estadoGeral], [locomocao], [inspecao], [palpacao], [forcaMuscular], [endereco], [cidade], [telefone], [email], [dor], [cirurgiaPrevias], [medicamentos], [terapiasPrevias], [terapiasConcomitantes], [examesComplementares], [DiagnosticoFisioterapeutico], [Objetivo]) VALUES (@nome, @responsavel, @sexo, @dtNascimento, @diagnostico, @qxPrincipal, @hma, @peso, @altura, @fc, @fr, @pa, @estadoGeral, @locomocao, @inspecao, @palpacao, @forcaMuscular, @endereco, @cidade, @telefone, @email, @dor, @cirurgiaPrevias, @medicamentos, @terapiasPrevias, @terapiasConcomitantes, @examesComplementares, @DiagnosticoFisioterapeutico, @Objetivo);
-SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo FROM Paciente WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Paciente] ([nome], [responsavel], [sexo], [dtNascimento], [diagnostico], [qxPrincipal], [hma], [antoponetria], [peso], [altura], [fc], [fr], [pa], [estadoGeral], [locomocao], [inspecao], [palpacao], [forcaMuscular], [endereco], [cidade], [telefone], [email], [dor], [cirurgiaPrevias], [medicamentos], [terapiasPrevias], [terapiasConcomitantes], [examesComplementares], [DiagnosticoFisioterapeutico], [Objetivo]) VALUES (@nome, @responsavel, @sexo, @dtNascimento, @diagnostico, @qxPrincipal, @hma, @antoponetria, @peso, @altura, @fc, @fr, @pa, @estadoGeral, @locomocao, @inspecao, @palpacao, @forcaMuscular, @endereco, @cidade, @telefone, @email, @dor, @cirurgiaPrevias, @medicamentos, @terapiasPrevias, @terapiasConcomitantes, @examesComplementares, @DiagnosticoFisioterapeutico, @Objetivo);
+SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, antoponetria, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo FROM Paciente WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsavel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsavel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17280,6 +17329,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@diagnostico", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "diagnostico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qxPrincipal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qxPrincipal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hma", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@antoponetria", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "antoponetria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@altura", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17304,55 +17354,57 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Objetivo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Objetivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Paciente] SET [nome] = @nome, [responsavel] = @responsavel, [sexo] = @sex" +
-                "o, [dtNascimento] = @dtNascimento, [diagnostico] = @diagnostico, [qxPrincipal] =" +
-                " @qxPrincipal, [hma] = @hma, [peso] = @peso, [altura] = @altura, [fc] = @fc, [fr" +
-                "] = @fr, [pa] = @pa, [estadoGeral] = @estadoGeral, [locomocao] = @locomocao, [in" +
-                "specao] = @inspecao, [palpacao] = @palpacao, [forcaMuscular] = @forcaMuscular, [" +
-                "endereco] = @endereco, [cidade] = @cidade, [telefone] = @telefone, [email] = @em" +
-                "ail, [dor] = @dor, [cirurgiaPrevias] = @cirurgiaPrevias, [medicamentos] = @medic" +
-                "amentos, [terapiasPrevias] = @terapiasPrevias, [terapiasConcomitantes] = @terapi" +
-                "asConcomitantes, [examesComplementares] = @examesComplementares, [DiagnosticoFis" +
-                "ioterapeutico] = @DiagnosticoFisioterapeutico, [Objetivo] = @Objetivo WHERE (([i" +
-                "d] = @Original_id) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Orig" +
-                "inal_nome)) AND ((@IsNull_responsavel = 1 AND [responsavel] IS NULL) OR ([respon" +
-                "savel] = @Original_responsavel)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR (" +
-                "[sexo] = @Original_sexo)) AND ((@IsNull_dtNascimento = 1 AND [dtNascimento] IS N" +
-                "ULL) OR ([dtNascimento] = @Original_dtNascimento)) AND ((@IsNull_diagnostico = 1" +
-                " AND [diagnostico] IS NULL) OR ([diagnostico] = @Original_diagnostico)) AND ((@I" +
-                "sNull_qxPrincipal = 1 AND [qxPrincipal] IS NULL) OR ([qxPrincipal] = @Original_q" +
-                "xPrincipal)) AND ((@IsNull_hma = 1 AND [hma] IS NULL) OR ([hma] = @Original_hma)" +
-                ") AND ((@IsNull_peso = 1 AND [peso] IS NULL) OR ([peso] = @Original_peso)) AND (" +
-                "(@IsNull_altura = 1 AND [altura] IS NULL) OR ([altura] = @Original_altura)) AND " +
-                "((@IsNull_fc = 1 AND [fc] IS NULL) OR ([fc] = @Original_fc)) AND ((@IsNull_fr = " +
-                "1 AND [fr] IS NULL) OR ([fr] = @Original_fr)) AND ((@IsNull_pa = 1 AND [pa] IS N" +
-                "ULL) OR ([pa] = @Original_pa)) AND ((@IsNull_estadoGeral = 1 AND [estadoGeral] I" +
-                "S NULL) OR ([estadoGeral] = @Original_estadoGeral)) AND ((@IsNull_locomocao = 1 " +
-                "AND [locomocao] IS NULL) OR ([locomocao] = @Original_locomocao)) AND ((@IsNull_i" +
-                "nspecao = 1 AND [inspecao] IS NULL) OR ([inspecao] = @Original_inspecao)) AND ((" +
-                "@IsNull_palpacao = 1 AND [palpacao] IS NULL) OR ([palpacao] = @Original_palpacao" +
-                ")) AND ((@IsNull_forcaMuscular = 1 AND [forcaMuscular] IS NULL) OR ([forcaMuscul" +
-                "ar] = @Original_forcaMuscular)) AND ((@IsNull_endereco = 1 AND [endereco] IS NUL" +
-                "L) OR ([endereco] = @Original_endereco)) AND ((@IsNull_cidade = 1 AND [cidade] I" +
-                "S NULL) OR ([cidade] = @Original_cidade)) AND ((@IsNull_telefone = 1 AND [telefo" +
-                "ne] IS NULL) OR ([telefone] = @Original_telefone)) AND ((@IsNull_email = 1 AND [" +
-                "email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_dor = 1 AND [dor] " +
-                "IS NULL) OR ([dor] = @Original_dor)) AND ((@IsNull_cirurgiaPrevias = 1 AND [ciru" +
-                "rgiaPrevias] IS NULL) OR ([cirurgiaPrevias] = @Original_cirurgiaPrevias)) AND ((" +
-                "@IsNull_medicamentos = 1 AND [medicamentos] IS NULL) OR ([medicamentos] = @Origi" +
-                "nal_medicamentos)) AND ((@IsNull_terapiasPrevias = 1 AND [terapiasPrevias] IS NU" +
-                "LL) OR ([terapiasPrevias] = @Original_terapiasPrevias)) AND ((@IsNull_terapiasCo" +
-                "ncomitantes = 1 AND [terapiasConcomitantes] IS NULL) OR ([terapiasConcomitantes]" +
-                " = @Original_terapiasConcomitantes)) AND ((@IsNull_examesComplementares = 1 AND " +
-                "[examesComplementares] IS NULL) OR ([examesComplementares] = @Original_examesCom" +
-                "plementares)) AND ((@IsNull_DiagnosticoFisioterapeutico = 1 AND [DiagnosticoFisi" +
-                "oterapeutico] IS NULL) OR ([DiagnosticoFisioterapeutico] = @Original_Diagnostico" +
-                "Fisioterapeutico)) AND ((@IsNull_Objetivo = 1 AND [Objetivo] IS NULL) OR ([Objet" +
-                "ivo] = @Original_Objetivo)));\r\nSELECT id, nome, responsavel, sexo, dtNascimento," +
-                " diagnostico, qxPrincipal, hma, peso, altura, fc, fr, pa, estadoGeral, locomocao" +
-                ", inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cir" +
-                "urgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComple" +
-                "mentares, DiagnosticoFisioterapeutico, Objetivo FROM Paciente WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Paciente] SET [nome] = @nome, [responsavel] = @responsavel, [sexo] " +
+                "= @sexo, [dtNascimento] = @dtNascimento, [diagnostico] = @diagnostico, [qxPrinci" +
+                "pal] = @qxPrincipal, [hma] = @hma, [antoponetria] = @antoponetria, [peso] = @pes" +
+                "o, [altura] = @altura, [fc] = @fc, [fr] = @fr, [pa] = @pa, [estadoGeral] = @esta" +
+                "doGeral, [locomocao] = @locomocao, [inspecao] = @inspecao, [palpacao] = @palpaca" +
+                "o, [forcaMuscular] = @forcaMuscular, [endereco] = @endereco, [cidade] = @cidade," +
+                " [telefone] = @telefone, [email] = @email, [dor] = @dor, [cirurgiaPrevias] = @ci" +
+                "rurgiaPrevias, [medicamentos] = @medicamentos, [terapiasPrevias] = @terapiasPrev" +
+                "ias, [terapiasConcomitantes] = @terapiasConcomitantes, [examesComplementares] = " +
+                "@examesComplementares, [DiagnosticoFisioterapeutico] = @DiagnosticoFisioterapeut" +
+                "ico, [Objetivo] = @Objetivo WHERE (([id] = @Original_id) AND ((@IsNull_nome = 1 " +
+                "AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_responsavel = 1 " +
+                "AND [responsavel] IS NULL) OR ([responsavel] = @Original_responsavel)) AND ((@Is" +
+                "Null_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_dt" +
+                "Nascimento = 1 AND [dtNascimento] IS NULL) OR ([dtNascimento] = @Original_dtNasc" +
+                "imento)) AND ((@IsNull_diagnostico = 1 AND [diagnostico] IS NULL) OR ([diagnosti" +
+                "co] = @Original_diagnostico)) AND ((@IsNull_qxPrincipal = 1 AND [qxPrincipal] IS" +
+                " NULL) OR ([qxPrincipal] = @Original_qxPrincipal)) AND ((@IsNull_hma = 1 AND [hm" +
+                "a] IS NULL) OR ([hma] = @Original_hma)) AND ((@IsNull_antoponetria = 1 AND [anto" +
+                "ponetria] IS NULL) OR ([antoponetria] = @Original_antoponetria)) AND ((@IsNull_p" +
+                "eso = 1 AND [peso] IS NULL) OR ([peso] = @Original_peso)) AND ((@IsNull_altura =" +
+                " 1 AND [altura] IS NULL) OR ([altura] = @Original_altura)) AND ((@IsNull_fc = 1 " +
+                "AND [fc] IS NULL) OR ([fc] = @Original_fc)) AND ((@IsNull_fr = 1 AND [fr] IS NUL" +
+                "L) OR ([fr] = @Original_fr)) AND ((@IsNull_pa = 1 AND [pa] IS NULL) OR ([pa] = @" +
+                "Original_pa)) AND ((@IsNull_estadoGeral = 1 AND [estadoGeral] IS NULL) OR ([esta" +
+                "doGeral] = @Original_estadoGeral)) AND ((@IsNull_locomocao = 1 AND [locomocao] I" +
+                "S NULL) OR ([locomocao] = @Original_locomocao)) AND ((@IsNull_inspecao = 1 AND [" +
+                "inspecao] IS NULL) OR ([inspecao] = @Original_inspecao)) AND ((@IsNull_palpacao " +
+                "= 1 AND [palpacao] IS NULL) OR ([palpacao] = @Original_palpacao)) AND ((@IsNull_" +
+                "forcaMuscular = 1 AND [forcaMuscular] IS NULL) OR ([forcaMuscular] = @Original_f" +
+                "orcaMuscular)) AND ((@IsNull_endereco = 1 AND [endereco] IS NULL) OR ([endereco]" +
+                " = @Original_endereco)) AND ((@IsNull_cidade = 1 AND [cidade] IS NULL) OR ([cida" +
+                "de] = @Original_cidade)) AND ((@IsNull_telefone = 1 AND [telefone] IS NULL) OR (" +
+                "[telefone] = @Original_telefone)) AND ((@IsNull_email = 1 AND [email] IS NULL) O" +
+                "R ([email] = @Original_email)) AND ((@IsNull_dor = 1 AND [dor] IS NULL) OR ([dor" +
+                "] = @Original_dor)) AND ((@IsNull_cirurgiaPrevias = 1 AND [cirurgiaPrevias] IS N" +
+                "ULL) OR ([cirurgiaPrevias] = @Original_cirurgiaPrevias)) AND ((@IsNull_medicamen" +
+                "tos = 1 AND [medicamentos] IS NULL) OR ([medicamentos] = @Original_medicamentos)" +
+                ") AND ((@IsNull_terapiasPrevias = 1 AND [terapiasPrevias] IS NULL) OR ([terapias" +
+                "Previas] = @Original_terapiasPrevias)) AND ((@IsNull_terapiasConcomitantes = 1 A" +
+                "ND [terapiasConcomitantes] IS NULL) OR ([terapiasConcomitantes] = @Original_tera" +
+                "piasConcomitantes)) AND ((@IsNull_examesComplementares = 1 AND [examesComplement" +
+                "ares] IS NULL) OR ([examesComplementares] = @Original_examesComplementares)) AND" +
+                " ((@IsNull_DiagnosticoFisioterapeutico = 1 AND [DiagnosticoFisioterapeutico] IS " +
+                "NULL) OR ([DiagnosticoFisioterapeutico] = @Original_DiagnosticoFisioterapeutico)" +
+                ") AND ((@IsNull_Objetivo = 1 AND [Objetivo] IS NULL) OR ([Objetivo] = @Original_" +
+                "Objetivo)));\r\nSELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxP" +
+                "rincipal, hma, antoponetria, peso, altura, fc, fr, pa, estadoGeral, locomocao, i" +
+                "nspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurg" +
+                "iaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplemen" +
+                "tares, DiagnosticoFisioterapeutico, Objetivo FROM Paciente WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsavel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "responsavel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17361,6 +17413,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@diagnostico", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "diagnostico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qxPrincipal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qxPrincipal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hma", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@antoponetria", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "antoponetria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@altura", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17398,6 +17451,8 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_qxPrincipal", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "qxPrincipal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_hma", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hma", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_antoponetria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "antoponetria", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_antoponetria", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "antoponetria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_peso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_peso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_altura", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "altura", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -17455,45 +17510,11 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo FROM Paciente";
+            this._commandCollection[0].CommandText = @"SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, antoponetria, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo FROM dbo.Paciente";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[Paciente] ([nome], [responsavel], [sexo], [dtNascimento], [diagnostico], [qxPrincipal], [hma], [peso], [altura], [fc], [fr], [pa], [estadoGeral], [locomocao], [inspecao], [palpacao], [forcaMuscular], [endereco], [cidade], [telefone], [email], [dor], [cirurgiaPrevias], [medicamentos], [terapiasPrevias], [terapiasConcomitantes], [examesComplementares], [DiagnosticoFisioterapeutico], [Objetivo]) VALUES (@nome, @responsavel, @sexo, @dtNascimento, @diagnostico, @qxPrincipal, @hma, @peso, @altura, @fc, @fr, @pa, @estadoGeral, @locomocao, @inspecao, @palpacao, @forcaMuscular, @endereco, @cidade, @telefone, @email, @dor, @cirurgiaPrevias, @medicamentos, @terapiasPrevias, @terapiasConcomitantes, @examesComplementares, @DiagnosticoFisioterapeutico, @Objetivo);
-SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo FROM Paciente WHERE (id = SCOPE_IDENTITY())";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@responsavel", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "responsavel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtNascimento", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dtNascimento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@diagnostico", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "diagnostico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qxPrincipal", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "qxPrincipal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hma", global::System.Data.SqlDbType.VarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "hma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@altura", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "altura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fr", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pa", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "pa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoGeral", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "estadoGeral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@locomocao", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "locomocao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inspecao", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "inspecao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@palpacao", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "palpacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@forcaMuscular", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "forcaMuscular", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endereco", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "endereco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cidade", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefone", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "telefone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "dor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cirurgiaPrevias", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "cirurgiaPrevias", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@medicamentos", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "medicamentos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@terapiasPrevias", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "terapiasPrevias", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@terapiasConcomitantes", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "terapiasConcomitantes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@examesComplementares", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "examesComplementares", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DiagnosticoFisioterapeutico", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "DiagnosticoFisioterapeutico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Objetivo", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "Objetivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17562,6 +17583,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string Original_diagnostico, 
                     string Original_qxPrincipal, 
                     string Original_hma, 
+                    string Original_antoponetria, 
                     global::System.Nullable<int> Original_peso, 
                     global::System.Nullable<decimal> Original_altura, 
                     global::System.Nullable<int> Original_fc, 
@@ -17641,181 +17663,189 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_hma));
             }
-            if ((Original_peso.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_peso.Value));
-            }
-            else {
+            if ((Original_antoponetria == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_altura.HasValue == true)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_antoponetria));
+            }
+            if ((Original_peso.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((decimal)(Original_altura.Value));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_peso.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_fc.HasValue == true)) {
+            if ((Original_altura.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_fc.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((decimal)(Original_altura.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_fr.HasValue == true)) {
+            if ((Original_fc.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_fr.Value));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_fc.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_pa == null)) {
+            if ((Original_fr.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((int)(Original_fr.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_pa));
-            }
-            if ((Original_estadoGeral == null)) {
+            if ((Original_pa == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_estadoGeral));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_pa));
             }
-            if ((Original_locomocao == null)) {
+            if ((Original_estadoGeral == null)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_locomocao));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_estadoGeral));
             }
-            if ((Original_inspecao == null)) {
+            if ((Original_locomocao == null)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_inspecao));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_locomocao));
             }
-            if ((Original_palpacao == null)) {
+            if ((Original_inspecao == null)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_palpacao));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_inspecao));
             }
-            if ((Original_forcaMuscular == null)) {
+            if ((Original_palpacao == null)) {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_forcaMuscular));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_palpacao));
             }
-            if ((Original_endereco == null)) {
+            if ((Original_forcaMuscular == null)) {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_endereco));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_forcaMuscular));
             }
-            if ((Original_cidade == null)) {
+            if ((Original_endereco == null)) {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_cidade));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_endereco));
             }
-            if ((Original_telefone == null)) {
+            if ((Original_cidade == null)) {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_telefone));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_cidade));
             }
-            if ((Original_email == null)) {
+            if ((Original_telefone == null)) {
                 this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_email));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_telefone));
             }
-            if ((Original_dor.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((int)(Original_dor.Value));
-            }
-            else {
+            if ((Original_email == null)) {
                 this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
-            if ((Original_cirurgiaPrevias == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_email));
+            }
+            if ((Original_dor.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((int)(Original_dor.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_cirurgiaPrevias));
-            }
-            if ((Original_medicamentos == null)) {
+            if ((Original_cirurgiaPrevias == null)) {
                 this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_medicamentos));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_cirurgiaPrevias));
             }
-            if ((Original_terapiasPrevias == null)) {
+            if ((Original_medicamentos == null)) {
                 this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_terapiasPrevias));
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_medicamentos));
             }
-            if ((Original_terapiasConcomitantes == null)) {
+            if ((Original_terapiasPrevias == null)) {
                 this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_terapiasConcomitantes));
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_terapiasPrevias));
             }
-            if ((Original_examesComplementares == null)) {
+            if ((Original_terapiasConcomitantes == null)) {
                 this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_examesComplementares));
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_terapiasConcomitantes));
             }
-            if ((Original_DiagnosticoFisioterapeutico == null)) {
+            if ((Original_examesComplementares == null)) {
                 this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_DiagnosticoFisioterapeutico));
+                this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_examesComplementares));
             }
-            if ((Original_Objetivo == null)) {
+            if ((Original_DiagnosticoFisioterapeutico == null)) {
                 this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_Objetivo));
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_DiagnosticoFisioterapeutico));
+            }
+            if ((Original_Objetivo == null)) {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((string)(Original_Objetivo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -17845,6 +17875,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string diagnostico, 
                     string qxPrincipal, 
                     string hma, 
+                    string antoponetria, 
                     global::System.Nullable<int> peso, 
                     global::System.Nullable<decimal> altura, 
                     global::System.Nullable<int> fc, 
@@ -17909,137 +17940,143 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(hma));
             }
-            if ((peso.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(peso.Value));
-            }
-            else {
+            if ((antoponetria == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((altura.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(altura.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(antoponetria));
+            }
+            if ((peso.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(peso.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((fc.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(fc.Value));
+            if ((altura.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(altura.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((fr.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(fr.Value));
+            if ((fc.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(fc.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((pa == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((fr.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(fr.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(pa));
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((estadoGeral == null)) {
+            if ((pa == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(estadoGeral));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(pa));
             }
-            if ((locomocao == null)) {
+            if ((estadoGeral == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(locomocao));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(estadoGeral));
             }
-            if ((inspecao == null)) {
+            if ((locomocao == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(inspecao));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(locomocao));
             }
-            if ((palpacao == null)) {
+            if ((inspecao == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(palpacao));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(inspecao));
             }
-            if ((forcaMuscular == null)) {
+            if ((palpacao == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(forcaMuscular));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(palpacao));
             }
-            if ((endereco == null)) {
+            if ((forcaMuscular == null)) {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(endereco));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(forcaMuscular));
             }
-            if ((cidade == null)) {
+            if ((endereco == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(cidade));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(endereco));
             }
-            if ((telefone == null)) {
+            if ((cidade == null)) {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(telefone));
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(cidade));
             }
-            if ((email == null)) {
+            if ((telefone == null)) {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(email));
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(telefone));
             }
-            if ((dor.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((int)(dor.Value));
-            }
-            else {
+            if ((email == null)) {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((cirurgiaPrevias == null)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(email));
+            }
+            if ((dor.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(dor.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(cirurgiaPrevias));
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((medicamentos == null)) {
+            if ((cirurgiaPrevias == null)) {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(medicamentos));
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(cirurgiaPrevias));
             }
-            if ((terapiasPrevias == null)) {
+            if ((medicamentos == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(terapiasPrevias));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(medicamentos));
             }
-            if ((terapiasConcomitantes == null)) {
+            if ((terapiasPrevias == null)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(terapiasConcomitantes));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(terapiasPrevias));
             }
-            if ((examesComplementares == null)) {
+            if ((terapiasConcomitantes == null)) {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(examesComplementares));
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(terapiasConcomitantes));
             }
-            if ((DiagnosticoFisioterapeutico == null)) {
+            if ((examesComplementares == null)) {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(DiagnosticoFisioterapeutico));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(examesComplementares));
             }
-            if ((Objetivo == null)) {
+            if ((DiagnosticoFisioterapeutico == null)) {
                 this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Objetivo));
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(DiagnosticoFisioterapeutico));
+            }
+            if ((Objetivo == null)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(Objetivo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -18069,6 +18106,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string diagnostico, 
                     string qxPrincipal, 
                     string hma, 
+                    string antoponetria, 
                     global::System.Nullable<int> peso, 
                     global::System.Nullable<decimal> altura, 
                     global::System.Nullable<int> fc, 
@@ -18099,6 +18137,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string Original_diagnostico, 
                     string Original_qxPrincipal, 
                     string Original_hma, 
+                    string Original_antoponetria, 
                     global::System.Nullable<int> Original_peso, 
                     global::System.Nullable<decimal> Original_altura, 
                     global::System.Nullable<int> Original_fc, 
@@ -18164,372 +18203,386 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(hma));
             }
-            if ((peso.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(peso.Value));
-            }
-            else {
+            if ((antoponetria == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((altura.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(altura.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(antoponetria));
+            }
+            if ((peso.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(peso.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((fc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(fc.Value));
+            if ((altura.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(altura.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((fr.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(fr.Value));
+            if ((fc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(fc.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((pa == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((fr.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(fr.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(pa));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((estadoGeral == null)) {
+            if ((pa == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(estadoGeral));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(pa));
             }
-            if ((locomocao == null)) {
+            if ((estadoGeral == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(locomocao));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(estadoGeral));
             }
-            if ((inspecao == null)) {
+            if ((locomocao == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(inspecao));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(locomocao));
             }
-            if ((palpacao == null)) {
+            if ((inspecao == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(palpacao));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(inspecao));
             }
-            if ((forcaMuscular == null)) {
+            if ((palpacao == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(forcaMuscular));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(palpacao));
             }
-            if ((endereco == null)) {
+            if ((forcaMuscular == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(endereco));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(forcaMuscular));
             }
-            if ((cidade == null)) {
+            if ((endereco == null)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(cidade));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(endereco));
             }
-            if ((telefone == null)) {
+            if ((cidade == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(telefone));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(cidade));
             }
-            if ((email == null)) {
+            if ((telefone == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(email));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(telefone));
             }
-            if ((dor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(dor.Value));
-            }
-            else {
+            if ((email == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((cirurgiaPrevias == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(email));
+            }
+            if ((dor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(dor.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(cirurgiaPrevias));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((medicamentos == null)) {
+            if ((cirurgiaPrevias == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(medicamentos));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(cirurgiaPrevias));
             }
-            if ((terapiasPrevias == null)) {
+            if ((medicamentos == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(terapiasPrevias));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(medicamentos));
             }
-            if ((terapiasConcomitantes == null)) {
+            if ((terapiasPrevias == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(terapiasConcomitantes));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(terapiasPrevias));
             }
-            if ((examesComplementares == null)) {
+            if ((terapiasConcomitantes == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(examesComplementares));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(terapiasConcomitantes));
             }
-            if ((DiagnosticoFisioterapeutico == null)) {
+            if ((examesComplementares == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(DiagnosticoFisioterapeutico));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(examesComplementares));
             }
-            if ((Objetivo == null)) {
+            if ((DiagnosticoFisioterapeutico == null)) {
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Objetivo));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(DiagnosticoFisioterapeutico));
             }
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_id));
-            if ((Original_nome == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            if ((Objetivo == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_nome));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Objetivo));
+            }
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_id));
+            if ((Original_nome == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_nome));
             }
             if ((Original_responsavel == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_responsavel));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_responsavel));
             }
             if ((Original_sexo == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_sexo));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_sexo));
             }
             if ((Original_dtNascimento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_dtNascimento.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_dtNascimento.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_diagnostico == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_diagnostico));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_diagnostico));
             }
             if ((Original_qxPrincipal == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_qxPrincipal));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_qxPrincipal));
             }
             if ((Original_hma == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_hma));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_hma));
+            }
+            if ((Original_antoponetria == null)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_antoponetria));
             }
             if ((Original_peso.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_peso.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(Original_peso.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             if ((Original_altura.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((decimal)(Original_altura.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((decimal)(Original_altura.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             if ((Original_fc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_fc.Value));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_fc.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             if ((Original_fr.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_fr.Value));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_fr.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             if ((Original_pa == null)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_pa));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_pa));
             }
             if ((Original_estadoGeral == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_estadoGeral));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_estadoGeral));
             }
             if ((Original_locomocao == null)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_locomocao));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_locomocao));
             }
             if ((Original_inspecao == null)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_inspecao));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_inspecao));
             }
             if ((Original_palpacao == null)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_palpacao));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_palpacao));
             }
             if ((Original_forcaMuscular == null)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_forcaMuscular));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_forcaMuscular));
             }
             if ((Original_endereco == null)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_endereco));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_endereco));
             }
             if ((Original_cidade == null)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_cidade));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_cidade));
             }
             if ((Original_telefone == null)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_telefone));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_telefone));
             }
             if ((Original_email == null)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_email));
             }
             if ((Original_dor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((int)(Original_dor.Value));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((int)(Original_dor.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
             if ((Original_cirurgiaPrevias == null)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((string)(Original_cirurgiaPrevias));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_cirurgiaPrevias));
             }
             if ((Original_medicamentos == null)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(Original_medicamentos));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_medicamentos));
             }
             if ((Original_terapiasPrevias == null)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(Original_terapiasPrevias));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_terapiasPrevias));
             }
             if ((Original_terapiasConcomitantes == null)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((string)(Original_terapiasConcomitantes));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_terapiasConcomitantes));
             }
             if ((Original_examesComplementares == null)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(Original_examesComplementares));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_examesComplementares));
             }
             if ((Original_DiagnosticoFisioterapeutico == null)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(Original_DiagnosticoFisioterapeutico));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_DiagnosticoFisioterapeutico));
             }
             if ((Original_Objetivo == null)) {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((string)(Original_Objetivo));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((string)(Original_Objetivo));
             }
-            this.Adapter.UpdateCommand.Parameters[88].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[91].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18558,6 +18611,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string diagnostico, 
                     string qxPrincipal, 
                     string hma, 
+                    string antoponetria, 
                     global::System.Nullable<int> peso, 
                     global::System.Nullable<decimal> altura, 
                     global::System.Nullable<int> fc, 
@@ -18588,6 +18642,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string Original_diagnostico, 
                     string Original_qxPrincipal, 
                     string Original_hma, 
+                    string Original_antoponetria, 
                     global::System.Nullable<int> Original_peso, 
                     global::System.Nullable<decimal> Original_altura, 
                     global::System.Nullable<int> Original_fc, 
@@ -18610,233 +18665,7 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     string Original_examesComplementares, 
                     string Original_DiagnosticoFisioterapeutico, 
                     string Original_Objetivo) {
-            return this.Update(nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo, Original_id, Original_nome, Original_responsavel, Original_sexo, Original_dtNascimento, Original_diagnostico, Original_qxPrincipal, Original_hma, Original_peso, Original_altura, Original_fc, Original_fr, Original_pa, Original_estadoGeral, Original_locomocao, Original_inspecao, Original_palpacao, Original_forcaMuscular, Original_endereco, Original_cidade, Original_telefone, Original_email, Original_dor, Original_cirurgiaPrevias, Original_medicamentos, Original_terapiasPrevias, Original_terapiasConcomitantes, Original_examesComplementares, Original_DiagnosticoFisioterapeutico, Original_Objetivo, Original_id);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Insert1(
-                    string nome, 
-                    string responsavel, 
-                    string sexo, 
-                    global::System.Nullable<global::System.DateTime> dtNascimento, 
-                    string diagnostico, 
-                    string qxPrincipal, 
-                    string hma, 
-                    global::System.Nullable<int> peso, 
-                    global::System.Nullable<decimal> altura, 
-                    global::System.Nullable<int> fc, 
-                    global::System.Nullable<int> fr, 
-                    string pa, 
-                    string estadoGeral, 
-                    string locomocao, 
-                    string inspecao, 
-                    string palpacao, 
-                    string forcaMuscular, 
-                    string endereco, 
-                    string cidade, 
-                    string telefone, 
-                    string email, 
-                    global::System.Nullable<int> dor, 
-                    string cirurgiaPrevias, 
-                    string medicamentos, 
-                    string terapiasPrevias, 
-                    string terapiasConcomitantes, 
-                    string examesComplementares, 
-                    string DiagnosticoFisioterapeutico, 
-                    string Objetivo) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((nome == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(nome));
-            }
-            if ((responsavel == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(responsavel));
-            }
-            if ((sexo == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(sexo));
-            }
-            if ((dtNascimento.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(dtNascimento.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((diagnostico == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((string)(diagnostico));
-            }
-            if ((qxPrincipal == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(qxPrincipal));
-            }
-            if ((hma == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[6].Value = ((string)(hma));
-            }
-            if ((peso.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(peso.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((altura.HasValue == true)) {
-                command.Parameters[8].Value = ((decimal)(altura.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((fc.HasValue == true)) {
-                command.Parameters[9].Value = ((int)(fc.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((fr.HasValue == true)) {
-                command.Parameters[10].Value = ((int)(fr.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((pa == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[11].Value = ((string)(pa));
-            }
-            if ((estadoGeral == null)) {
-                command.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[12].Value = ((string)(estadoGeral));
-            }
-            if ((locomocao == null)) {
-                command.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[13].Value = ((string)(locomocao));
-            }
-            if ((inspecao == null)) {
-                command.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[14].Value = ((string)(inspecao));
-            }
-            if ((palpacao == null)) {
-                command.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[15].Value = ((string)(palpacao));
-            }
-            if ((forcaMuscular == null)) {
-                command.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[16].Value = ((string)(forcaMuscular));
-            }
-            if ((endereco == null)) {
-                command.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[17].Value = ((string)(endereco));
-            }
-            if ((cidade == null)) {
-                command.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[18].Value = ((string)(cidade));
-            }
-            if ((telefone == null)) {
-                command.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[19].Value = ((string)(telefone));
-            }
-            if ((email == null)) {
-                command.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[20].Value = ((string)(email));
-            }
-            if ((dor.HasValue == true)) {
-                command.Parameters[21].Value = ((int)(dor.Value));
-            }
-            else {
-                command.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((cirurgiaPrevias == null)) {
-                command.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[22].Value = ((string)(cirurgiaPrevias));
-            }
-            if ((medicamentos == null)) {
-                command.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[23].Value = ((string)(medicamentos));
-            }
-            if ((terapiasPrevias == null)) {
-                command.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[24].Value = ((string)(terapiasPrevias));
-            }
-            if ((terapiasConcomitantes == null)) {
-                command.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[25].Value = ((string)(terapiasConcomitantes));
-            }
-            if ((examesComplementares == null)) {
-                command.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[26].Value = ((string)(examesComplementares));
-            }
-            if ((DiagnosticoFisioterapeutico == null)) {
-                command.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[27].Value = ((string)(DiagnosticoFisioterapeutico));
-            }
-            if ((Objetivo == null)) {
-                command.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[28].Value = ((string)(Objetivo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
+            return this.Update(nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma, antoponetria, peso, altura, fc, fr, pa, estadoGeral, locomocao, inspecao, palpacao, forcaMuscular, endereco, cidade, telefone, email, dor, cirurgiaPrevias, medicamentos, terapiasPrevias, terapiasConcomitantes, examesComplementares, DiagnosticoFisioterapeutico, Objetivo, Original_id, Original_nome, Original_responsavel, Original_sexo, Original_dtNascimento, Original_diagnostico, Original_qxPrincipal, Original_hma, Original_antoponetria, Original_peso, Original_altura, Original_fc, Original_fr, Original_pa, Original_estadoGeral, Original_locomocao, Original_inspecao, Original_palpacao, Original_forcaMuscular, Original_endereco, Original_cidade, Original_telefone, Original_email, Original_dor, Original_cirurgiaPrevias, Original_medicamentos, Original_terapiasPrevias, Original_terapiasConcomitantes, Original_examesComplementares, Original_DiagnosticoFisioterapeutico, Original_Objetivo, Original_id);
         }
     }
     
