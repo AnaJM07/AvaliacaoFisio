@@ -44,6 +44,24 @@ namespace FisioForms {
         
         private PacienteDataTable tablePaciente;
         
+        private global::System.Data.DataRelation relationPaciente_Pe;
+        
+        private global::System.Data.DataRelation relationPaciente_Ombro;
+        
+        private global::System.Data.DataRelation relationPaciente_Joelho;
+        
+        private global::System.Data.DataRelation relationPaciente_Adm_Tronco;
+        
+        private global::System.Data.DataRelation relationPaciente_Adm_Punho;
+        
+        private global::System.Data.DataRelation relationPaciente_Adm_Cotovelo;
+        
+        private global::System.Data.DataRelation relationPaciente_Adm_Cervical;
+        
+        private global::System.Data.DataRelation relationPaciente_Quadril;
+        
+        private global::System.Data.DataRelation relationPaciente_Tornozelo;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -410,6 +428,15 @@ namespace FisioForms {
                     this.tablePaciente.InitVars();
                 }
             }
+            this.relationPaciente_Pe = this.Relations["Paciente_Pe"];
+            this.relationPaciente_Ombro = this.Relations["Paciente_Ombro"];
+            this.relationPaciente_Joelho = this.Relations["Paciente_Joelho"];
+            this.relationPaciente_Adm_Tronco = this.Relations["Paciente_Adm_Tronco"];
+            this.relationPaciente_Adm_Punho = this.Relations["Paciente_Adm_Punho"];
+            this.relationPaciente_Adm_Cotovelo = this.Relations["Paciente_Adm_Cotovelo"];
+            this.relationPaciente_Adm_Cervical = this.Relations["Paciente_Adm_Cervical"];
+            this.relationPaciente_Quadril = this.Relations["Paciente_Quadril"];
+            this.relationPaciente_Tornozelo = this.Relations["Paciente_Tornozelo"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -440,6 +467,42 @@ namespace FisioForms {
             base.Tables.Add(this.tableTornozelo);
             this.tablePaciente = new PacienteDataTable();
             base.Tables.Add(this.tablePaciente);
+            this.relationPaciente_Pe = new global::System.Data.DataRelation("Paciente_Pe", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePe.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Pe);
+            this.relationPaciente_Ombro = new global::System.Data.DataRelation("Paciente_Ombro", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableOmbro.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Ombro);
+            this.relationPaciente_Joelho = new global::System.Data.DataRelation("Paciente_Joelho", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableJoelho.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Joelho);
+            this.relationPaciente_Adm_Tronco = new global::System.Data.DataRelation("Paciente_Adm_Tronco", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAdm_Tronco.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Adm_Tronco);
+            this.relationPaciente_Adm_Punho = new global::System.Data.DataRelation("Paciente_Adm_Punho", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAdm_Punho.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Adm_Punho);
+            this.relationPaciente_Adm_Cotovelo = new global::System.Data.DataRelation("Paciente_Adm_Cotovelo", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAdm_Cotovelo.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Adm_Cotovelo);
+            this.relationPaciente_Adm_Cervical = new global::System.Data.DataRelation("Paciente_Adm_Cervical", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAdm_Cervical.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Adm_Cervical);
+            this.relationPaciente_Quadril = new global::System.Data.DataRelation("Paciente_Quadril", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQuadril.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Quadril);
+            this.relationPaciente_Tornozelo = new global::System.Data.DataRelation("Paciente_Tornozelo", new global::System.Data.DataColumn[] {
+                        this.tablePaciente.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTornozelo.idColumn}, false);
+            this.Relations.Add(this.relationPaciente_Tornozelo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6095,6 +6158,17 @@ namespace FisioForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Adm_Cervical"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Adm_Cervical"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFlexao_DireitaNull() {
                 return this.IsNull(this.tableAdm_Cervical.Flexao_DireitaColumn);
             }
@@ -6564,6 +6638,17 @@ namespace FisioForms {
                 }
                 set {
                     this[this.tableAdm_Cotovelo.Supinacao_ConclusaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Adm_Cotovelo"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Adm_Cotovelo"]);
                 }
             }
             
@@ -7043,6 +7128,17 @@ namespace FisioForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Adm_Punho"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Adm_Punho"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFlexao_DireitaNull() {
                 return this.IsNull(this.tableAdm_Punho.Flexao_DireitaColumn);
             }
@@ -7517,6 +7613,17 @@ namespace FisioForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Adm_Tronco"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Adm_Tronco"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFlexao_DireitaNull() {
                 return this.IsNull(this.tableAdm_Tronco.Flexao_DireitaColumn);
             }
@@ -7858,6 +7965,17 @@ namespace FisioForms {
                 }
                 set {
                     this[this.tableJoelho.Extensao_ConclusaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Joelho"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Joelho"]);
                 }
             }
             
@@ -8369,6 +8487,17 @@ namespace FisioForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Ombro"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Ombro"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFlexao_DireitaNull() {
                 return this.IsNull(this.tableOmbro.Flexao_DireitaColumn);
             }
@@ -8806,6 +8935,17 @@ namespace FisioForms {
                 }
                 set {
                     this[this.tablePe.Eversao_ConclusaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Pe"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Pe"]);
                 }
             }
             
@@ -9317,6 +9457,17 @@ namespace FisioForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Quadril"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Quadril"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFlexao_DireitaNull() {
                 return this.IsNull(this.tableQuadril.Flexao_DireitaColumn);
             }
@@ -9754,6 +9905,17 @@ namespace FisioForms {
                 }
                 set {
                     this[this.tableTornozelo.Dorsiflexao_ConclusaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PacienteRow PacienteRow {
+                get {
+                    return ((PacienteRow)(this.GetParentRow(this.Table.ParentRelations["Paciente_Tornozelo"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Paciente_Tornozelo"]);
                 }
             }
             
@@ -10801,6 +10963,105 @@ namespace FisioForms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetavalicaoFunNull() {
                 this[this.tablePaciente.avalicaoFunColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PeRow[] GetPeRows() {
+                if ((this.Table.ChildRelations["Paciente_Pe"] == null)) {
+                    return new PeRow[0];
+                }
+                else {
+                    return ((PeRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Pe"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OmbroRow[] GetOmbroRows() {
+                if ((this.Table.ChildRelations["Paciente_Ombro"] == null)) {
+                    return new OmbroRow[0];
+                }
+                else {
+                    return ((OmbroRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Ombro"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public JoelhoRow[] GetJoelhoRows() {
+                if ((this.Table.ChildRelations["Paciente_Joelho"] == null)) {
+                    return new JoelhoRow[0];
+                }
+                else {
+                    return ((JoelhoRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Joelho"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Adm_TroncoRow[] GetAdm_TroncoRows() {
+                if ((this.Table.ChildRelations["Paciente_Adm_Tronco"] == null)) {
+                    return new Adm_TroncoRow[0];
+                }
+                else {
+                    return ((Adm_TroncoRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Adm_Tronco"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Adm_PunhoRow[] GetAdm_PunhoRows() {
+                if ((this.Table.ChildRelations["Paciente_Adm_Punho"] == null)) {
+                    return new Adm_PunhoRow[0];
+                }
+                else {
+                    return ((Adm_PunhoRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Adm_Punho"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Adm_CotoveloRow[] GetAdm_CotoveloRows() {
+                if ((this.Table.ChildRelations["Paciente_Adm_Cotovelo"] == null)) {
+                    return new Adm_CotoveloRow[0];
+                }
+                else {
+                    return ((Adm_CotoveloRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Adm_Cotovelo"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Adm_CervicalRow[] GetAdm_CervicalRows() {
+                if ((this.Table.ChildRelations["Paciente_Adm_Cervical"] == null)) {
+                    return new Adm_CervicalRow[0];
+                }
+                else {
+                    return ((Adm_CervicalRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Adm_Cervical"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public QuadrilRow[] GetQuadrilRows() {
+                if ((this.Table.ChildRelations["Paciente_Quadril"] == null)) {
+                    return new QuadrilRow[0];
+                }
+                else {
+                    return ((QuadrilRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Quadril"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TornozeloRow[] GetTornozeloRows() {
+                if ((this.Table.ChildRelations["Paciente_Tornozelo"] == null)) {
+                    return new TornozeloRow[0];
+                }
+                else {
+                    return ((TornozeloRow[])(base.GetChildRows(this.Table.ChildRelations["Paciente_Tornozelo"])));
+                }
             }
         }
         
@@ -21865,6 +22126,15 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(masterDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._pacienteTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Paciente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pacienteTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._adm_CervicalTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Adm_Cervical.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -21946,15 +22216,6 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pacienteTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Paciente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pacienteTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -21965,6 +22226,14 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(masterDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._pacienteTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Paciente.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pacienteTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._adm_CervicalTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Adm_Cervical.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -22037,14 +22306,6 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pacienteTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Paciente.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pacienteTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -22055,14 +22316,6 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(masterDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._pacienteTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Paciente.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pacienteTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tornozeloTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Tornozelo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -22132,6 +22385,14 @@ SELECT id, nome, responsavel, sexo, dtNascimento, diagnostico, qxPrincipal, hma,
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._adm_CervicalTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._pacienteTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Paciente.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pacienteTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

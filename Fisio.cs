@@ -49,17 +49,7 @@ namespace FisioForms
             joelhoBindingSource.DataSource = objJoelho;
             quadrilBindingSource7.DataSource = objQuadril;
             tornozeloBindingSource.DataSource = objTornozelo;
-            peBindingSource.DataSource = objPe;
-
-            txtAntecFam.DataBindings.Add("Antecedentes Familiares", pacienteBindingSource, "Name");
-            ttxTemp.DataBindings.Add("Temperatura", pacienteBindingSource, "Name");
-        }
-
-        private void adm_CervicalBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.adm_CervicalBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.masterDataSet);
+             peBindingSource.DataSource = objPe;
 
         }
 

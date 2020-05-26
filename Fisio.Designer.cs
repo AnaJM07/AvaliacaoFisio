@@ -186,11 +186,13 @@
             this.txtDesvioRadialE = new System.Windows.Forms.TextBox();
             this.grpQuadril = new System.Windows.Forms.GroupBox();
             this.txtAducaoEQ = new System.Windows.Forms.TextBox();
+            this.quadrilBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.txtRotacaoExtD = new System.Windows.Forms.TextBox();
             this.txtRotacaoExtE = new System.Windows.Forms.TextBox();
             this.txtAbducaoDQ = new System.Windows.Forms.TextBox();
             this.txtAbducaoEQ = new System.Windows.Forms.TextBox();
             this.txtAducaoDQ = new System.Windows.Forms.TextBox();
+            this.ombroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtRotacaoIntD = new System.Windows.Forms.TextBox();
             this.txtRotacaoIntE = new System.Windows.Forms.TextBox();
             this.txtFlexaoDQ = new System.Windows.Forms.TextBox();
@@ -208,8 +210,8 @@
             this.txtAducaoEOmbro = new System.Windows.Forms.TextBox();
             this.txtRotInemaD = new System.Windows.Forms.TextBox();
             this.txtRotInemaE = new System.Windows.Forms.TextBox();
-            this.rotExterna_DireitaTextBox = new System.Windows.Forms.TextBox();
-            this.rotExterna_EsquerdaTextBox = new System.Windows.Forms.TextBox();
+            this.txtRotExterDO = new System.Windows.Forms.TextBox();
+            this.txtRotExterEO = new System.Windows.Forms.TextBox();
             this.grpTronco = new System.Windows.Forms.GroupBox();
             this.txtFlexaoD = new System.Windows.Forms.TextBox();
             this.adm_TroncoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -249,9 +251,7 @@
             this.tableAdapterManager = new FisioForms.masterDataSetTableAdapters.TableAdapterManager();
             this.pacienteTableAdapter = new FisioForms.masterDataSetTableAdapters.PacienteTableAdapter();
             this.joelhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ombroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quadrilBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.adm_CotoveloTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_CotoveloTableAdapter();
             this.adm_PunhoTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_PunhoTableAdapter();
             this.adm_TroncoTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_TroncoTableAdapter();
@@ -369,6 +369,8 @@
             this.grpPunho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adm_PunhoBindingSource)).BeginInit();
             this.grpQuadril.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quadrilBindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ombroBindingSource)).BeginInit();
             this.grpOmbro.SuspendLayout();
             this.grpTronco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adm_TroncoBindingSource)).BeginInit();
@@ -380,9 +382,7 @@
             this.tbpageDiagnostico.SuspendLayout();
             this.tbpageADM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ombroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quadrilBindingSource7)).BeginInit();
             this.SuspendLayout();
             // 
             // inversao_DireitaLabel
@@ -678,9 +678,9 @@
             antoponetriaLabel.AutoSize = true;
             antoponetriaLabel.Location = new System.Drawing.Point(488, 319);
             antoponetriaLabel.Name = "antoponetriaLabel";
-            antoponetriaLabel.Size = new System.Drawing.Size(70, 13);
+            antoponetriaLabel.Size = new System.Drawing.Size(72, 13);
             antoponetriaLabel.TabIndex = 179;
-            antoponetriaLabel.Text = "Antoponetria:";
+            antoponetriaLabel.Text = "Antopometria:";
             // 
             // qxPrincipalLabel
             // 
@@ -937,7 +937,7 @@
             // rotExterna_DireitaLabel
             // 
             rotExterna_DireitaLabel.AutoSize = true;
-            rotExterna_DireitaLabel.Location = new System.Drawing.Point(2, 298);
+            rotExterna_DireitaLabel.Location = new System.Drawing.Point(35, 281);
             rotExterna_DireitaLabel.Name = "rotExterna_DireitaLabel";
             rotExterna_DireitaLabel.Size = new System.Drawing.Size(99, 13);
             rotExterna_DireitaLabel.TabIndex = 42;
@@ -946,7 +946,7 @@
             // rotExterna_EsquerdaLabel
             // 
             rotExterna_EsquerdaLabel.AutoSize = true;
-            rotExterna_EsquerdaLabel.Location = new System.Drawing.Point(-8, 321);
+            rotExterna_EsquerdaLabel.Location = new System.Drawing.Point(20, 307);
             rotExterna_EsquerdaLabel.Name = "rotExterna_EsquerdaLabel";
             rotExterna_EsquerdaLabel.Size = new System.Drawing.Size(114, 13);
             rotExterna_EsquerdaLabel.TabIndex = 44;
@@ -1277,6 +1277,7 @@
             // 
             // inversao_DireitaTextBox
             // 
+            this.inversao_DireitaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peBindingSource, "Inversao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.inversao_DireitaTextBox.Location = new System.Drawing.Point(117, 15);
             this.inversao_DireitaTextBox.Name = "inversao_DireitaTextBox";
             this.inversao_DireitaTextBox.Size = new System.Drawing.Size(58, 20);
@@ -1284,6 +1285,7 @@
             // 
             // inversao_EsquerdaTextBox
             // 
+            this.inversao_EsquerdaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peBindingSource, "Inversao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.inversao_EsquerdaTextBox.Location = new System.Drawing.Point(117, 41);
             this.inversao_EsquerdaTextBox.Name = "inversao_EsquerdaTextBox";
             this.inversao_EsquerdaTextBox.Size = new System.Drawing.Size(58, 20);
@@ -1291,6 +1293,7 @@
             // 
             // txtEversaoD
             // 
+            this.txtEversaoD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peBindingSource, "Eversao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N5"));
             this.txtEversaoD.Location = new System.Drawing.Point(116, 67);
             this.txtEversaoD.Name = "txtEversaoD";
             this.txtEversaoD.Size = new System.Drawing.Size(63, 20);
@@ -1298,6 +1301,7 @@
             // 
             // txtEversaoE
             // 
+            this.txtEversaoE.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peBindingSource, "Eversao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N5"));
             this.txtEversaoE.Location = new System.Drawing.Point(117, 96);
             this.txtEversaoE.Name = "txtEversaoE";
             this.txtEversaoE.Size = new System.Drawing.Size(63, 20);
@@ -1405,6 +1409,7 @@
             // 
             // txtObjetivo
             // 
+            this.txtObjetivo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "Objetivo", true));
             this.txtObjetivo.Location = new System.Drawing.Point(55, 207);
             this.txtObjetivo.Multiline = true;
             this.txtObjetivo.Name = "txtObjetivo";
@@ -1413,6 +1418,7 @@
             // 
             // txtDiagFisio
             // 
+            this.txtDiagFisio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "DiagnosticoFisioterapeutico", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtDiagFisio.Location = new System.Drawing.Point(560, 138);
             this.txtDiagFisio.Name = "txtDiagFisio";
             this.txtDiagFisio.Size = new System.Drawing.Size(302, 20);
@@ -1420,6 +1426,7 @@
             // 
             // txtExamesComp
             // 
+            this.txtExamesComp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "examesComplementares", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtExamesComp.Location = new System.Drawing.Point(136, 138);
             this.txtExamesComp.Name = "txtExamesComp";
             this.txtExamesComp.Size = new System.Drawing.Size(273, 20);
@@ -1427,6 +1434,7 @@
             // 
             // txtTerapiasConco
             // 
+            this.txtTerapiasConco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "terapiasConcomitantes", true));
             this.txtTerapiasConco.Location = new System.Drawing.Point(545, 115);
             this.txtTerapiasConco.Name = "txtTerapiasConco";
             this.txtTerapiasConco.Size = new System.Drawing.Size(317, 20);
@@ -1434,6 +1442,7 @@
             // 
             // txtTerapiasPrev
             // 
+            this.txtTerapiasPrev.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "terapiasPrevias", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtTerapiasPrev.Location = new System.Drawing.Point(99, 112);
             this.txtTerapiasPrev.Name = "txtTerapiasPrev";
             this.txtTerapiasPrev.Size = new System.Drawing.Size(310, 20);
@@ -1441,6 +1450,7 @@
             // 
             // medicamentosTextBox
             // 
+            this.medicamentosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "medicamentos", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.medicamentosTextBox.Location = new System.Drawing.Point(531, 91);
             this.medicamentosTextBox.Name = "medicamentosTextBox";
             this.medicamentosTextBox.Size = new System.Drawing.Size(331, 20);
@@ -1448,7 +1458,7 @@
             // 
             // txtAvaliacaoFun
             // 
-            this.txtAvaliacaoFun.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "avaliacaoFun", true));
+            this.txtAvaliacaoFun.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "avalicaoFun", true));
             this.txtAvaliacaoFun.Location = new System.Drawing.Point(531, 65);
             this.txtAvaliacaoFun.Name = "txtAvaliacaoFun";
             this.txtAvaliacaoFun.Size = new System.Drawing.Size(331, 20);
@@ -1461,6 +1471,7 @@
             // 
             // txtAntecFam
             // 
+            this.txtAntecFam.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "antecendetesFam", true));
             this.txtAntecFam.Location = new System.Drawing.Point(129, 317);
             this.txtAntecFam.Name = "txtAntecFam";
             this.txtAntecFam.Size = new System.Drawing.Size(343, 20);
@@ -1468,6 +1479,7 @@
             // 
             // txtCirurgiasPrev
             // 
+            this.txtCirurgiasPrev.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "cirurgiaPrevias", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtCirurgiasPrev.Location = new System.Drawing.Point(92, 86);
             this.txtCirurgiasPrev.Name = "txtCirurgiasPrev";
             this.txtCirurgiasPrev.Size = new System.Drawing.Size(317, 20);
@@ -1475,6 +1487,7 @@
             // 
             // txtForcaMusc
             // 
+            this.txtForcaMusc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "forcaMuscular", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtForcaMusc.FormattingEnabled = true;
             this.txtForcaMusc.Items.AddRange(new object[] {
             "0 - Ausência de contração",
@@ -1490,6 +1503,7 @@
             // 
             // palpacaoTextBox
             // 
+            this.palpacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "palpacao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.palpacaoTextBox.Location = new System.Drawing.Point(66, 34);
             this.palpacaoTextBox.Name = "palpacaoTextBox";
             this.palpacaoTextBox.Size = new System.Drawing.Size(796, 20);
@@ -1497,6 +1511,7 @@
             // 
             // txtInspecao
             // 
+            this.txtInspecao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "inspecao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtInspecao.Location = new System.Drawing.Point(513, 8);
             this.txtInspecao.Name = "txtInspecao";
             this.txtInspecao.Size = new System.Drawing.Size(349, 20);
@@ -1504,6 +1519,7 @@
             // 
             // txtLocomocao
             // 
+            this.txtLocomocao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "locomocao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtLocomocao.Location = new System.Drawing.Point(77, 8);
             this.txtLocomocao.Name = "txtLocomocao";
             this.txtLocomocao.Size = new System.Drawing.Size(371, 20);
@@ -1534,6 +1550,7 @@
             // 
             // ttxTemp
             // 
+            this.ttxTemp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "temp", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.ttxTemp.Location = new System.Drawing.Point(783, 27);
             this.ttxTemp.Name = "ttxTemp";
             this.ttxTemp.Size = new System.Drawing.Size(52, 20);
@@ -1541,6 +1558,7 @@
             // 
             // txtPa
             // 
+            this.txtPa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "pa", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPa.Location = new System.Drawing.Point(588, 27);
             this.txtPa.Name = "txtPa";
             this.txtPa.Size = new System.Drawing.Size(61, 20);
@@ -1548,6 +1566,7 @@
             // 
             // txtFc
             // 
+            this.txtFc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "fc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
             this.txtFc.Location = new System.Drawing.Point(115, 27);
             this.txtFc.Name = "txtFc";
             this.txtFc.Size = new System.Drawing.Size(66, 20);
@@ -1555,6 +1574,7 @@
             // 
             // txtFr
             // 
+            this.txtFr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "fr", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
             this.txtFr.Location = new System.Drawing.Point(373, 27);
             this.txtFr.Name = "txtFr";
             this.txtFr.Size = new System.Drawing.Size(60, 20);
@@ -1562,6 +1582,7 @@
             // 
             // txtAltura
             // 
+            this.txtAltura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "peso", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtAltura.Location = new System.Drawing.Point(701, 317);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(52, 20);
@@ -1569,6 +1590,7 @@
             // 
             // txtPeso
             // 
+            this.txtPeso.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "peso", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPeso.Location = new System.Drawing.Point(602, 317);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(50, 20);
@@ -1576,6 +1598,7 @@
             // 
             // txtQxPrincipal
             // 
+            this.txtQxPrincipal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "qxPrincipal", true));
             this.txtQxPrincipal.Location = new System.Drawing.Point(545, 259);
             this.txtQxPrincipal.Name = "txtQxPrincipal";
             this.txtQxPrincipal.Size = new System.Drawing.Size(317, 20);
@@ -1583,6 +1606,7 @@
             // 
             // txtDiagnostico
             // 
+            this.txtDiagnostico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "estadoGeral", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtDiagnostico.Location = new System.Drawing.Point(78, 262);
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(366, 20);
@@ -1782,13 +1806,20 @@
             // 
             // txtAducaoEQ
             // 
+            this.txtAducaoEQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Aducao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtAducaoEQ.Location = new System.Drawing.Point(146, 193);
             this.txtAducaoEQ.Name = "txtAducaoEQ";
             this.txtAducaoEQ.Size = new System.Drawing.Size(62, 20);
             this.txtAducaoEQ.TabIndex = 75;
             // 
+            // quadrilBindingSource7
+            // 
+            this.quadrilBindingSource7.DataMember = "Quadril";
+            this.quadrilBindingSource7.DataSource = this.masterDataSet;
+            // 
             // txtRotacaoExtD
             // 
+            this.txtRotacaoExtD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "RotExterna_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtRotacaoExtD.Location = new System.Drawing.Point(147, 269);
             this.txtRotacaoExtD.Name = "txtRotacaoExtD";
             this.txtRotacaoExtD.Size = new System.Drawing.Size(62, 20);
@@ -1796,6 +1827,7 @@
             // 
             // txtRotacaoExtE
             // 
+            this.txtRotacaoExtE.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "RotExterna_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtRotacaoExtE.Location = new System.Drawing.Point(148, 295);
             this.txtRotacaoExtE.Name = "txtRotacaoExtE";
             this.txtRotacaoExtE.Size = new System.Drawing.Size(62, 20);
@@ -1803,6 +1835,7 @@
             // 
             // txtAbducaoDQ
             // 
+            this.txtAbducaoDQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Abducao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtAbducaoDQ.Location = new System.Drawing.Point(145, 118);
             this.txtAbducaoDQ.Name = "txtAbducaoDQ";
             this.txtAbducaoDQ.Size = new System.Drawing.Size(62, 20);
@@ -1810,6 +1843,7 @@
             // 
             // txtAbducaoEQ
             // 
+            this.txtAbducaoEQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Abducao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
             this.txtAbducaoEQ.Location = new System.Drawing.Point(145, 141);
             this.txtAbducaoEQ.Name = "txtAbducaoEQ";
             this.txtAbducaoEQ.Size = new System.Drawing.Size(62, 20);
@@ -1817,13 +1851,20 @@
             // 
             // txtAducaoDQ
             // 
+            this.txtAducaoDQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Aducao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtAducaoDQ.Location = new System.Drawing.Point(146, 167);
             this.txtAducaoDQ.Name = "txtAducaoDQ";
             this.txtAducaoDQ.Size = new System.Drawing.Size(62, 20);
             this.txtAducaoDQ.TabIndex = 73;
             // 
+            // ombroBindingSource
+            // 
+            this.ombroBindingSource.DataMember = "Ombro";
+            this.ombroBindingSource.DataSource = this.masterDataSet;
+            // 
             // txtRotacaoIntD
             // 
+            this.txtRotacaoIntD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "RotInerna_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtRotacaoIntD.Location = new System.Drawing.Point(147, 217);
             this.txtRotacaoIntD.Name = "txtRotacaoIntD";
             this.txtRotacaoIntD.Size = new System.Drawing.Size(60, 20);
@@ -1831,6 +1872,7 @@
             // 
             // txtRotacaoIntE
             // 
+            this.txtRotacaoIntE.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "RotInerna_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtRotacaoIntE.Location = new System.Drawing.Point(148, 243);
             this.txtRotacaoIntE.Name = "txtRotacaoIntE";
             this.txtRotacaoIntE.Size = new System.Drawing.Size(60, 20);
@@ -1838,6 +1880,7 @@
             // 
             // txtFlexaoDQ
             // 
+            this.txtFlexaoDQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Flexao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
             this.txtFlexaoDQ.Location = new System.Drawing.Point(145, 18);
             this.txtFlexaoDQ.Name = "txtFlexaoDQ";
             this.txtFlexaoDQ.Size = new System.Drawing.Size(61, 20);
@@ -1845,6 +1888,7 @@
             // 
             // txtFlexaoEQ
             // 
+            this.txtFlexaoEQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Flexao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtFlexaoEQ.Location = new System.Drawing.Point(145, 44);
             this.txtFlexaoEQ.Name = "txtFlexaoEQ";
             this.txtFlexaoEQ.Size = new System.Drawing.Size(61, 20);
@@ -1852,6 +1896,7 @@
             // 
             // txtExtensaoDQ
             // 
+            this.txtExtensaoDQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Extensao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtExtensaoDQ.Location = new System.Drawing.Point(145, 69);
             this.txtExtensaoDQ.Name = "txtExtensaoDQ";
             this.txtExtensaoDQ.Size = new System.Drawing.Size(61, 20);
@@ -1859,6 +1904,7 @@
             // 
             // txtExtensaoEQ
             // 
+            this.txtExtensaoEQ.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.quadrilBindingSource7, "Extensao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtExtensaoEQ.Location = new System.Drawing.Point(145, 92);
             this.txtExtensaoEQ.Name = "txtExtensaoEQ";
             this.txtExtensaoEQ.Size = new System.Drawing.Size(61, 20);
@@ -1887,18 +1933,19 @@
             this.grpOmbro.Controls.Add(rotInerna_EsquerdaLabel);
             this.grpOmbro.Controls.Add(this.txtRotInemaE);
             this.grpOmbro.Controls.Add(rotExterna_DireitaLabel);
-            this.grpOmbro.Controls.Add(this.rotExterna_DireitaTextBox);
+            this.grpOmbro.Controls.Add(this.txtRotExterDO);
             this.grpOmbro.Controls.Add(rotExterna_EsquerdaLabel);
-            this.grpOmbro.Controls.Add(this.rotExterna_EsquerdaTextBox);
+            this.grpOmbro.Controls.Add(this.txtRotExterEO);
             this.grpOmbro.Location = new System.Drawing.Point(465, 247);
             this.grpOmbro.Name = "grpOmbro";
-            this.grpOmbro.Size = new System.Drawing.Size(206, 280);
+            this.grpOmbro.Size = new System.Drawing.Size(206, 334);
             this.grpOmbro.TabIndex = 222;
             this.grpOmbro.TabStop = false;
             this.grpOmbro.Text = "Ombro";
             // 
             // txtFlexaoDOmbro
             // 
+            this.txtFlexaoDOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Flexao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
             this.txtFlexaoDOmbro.Location = new System.Drawing.Point(142, 20);
             this.txtFlexaoDOmbro.Name = "txtFlexaoDOmbro";
             this.txtFlexaoDOmbro.Size = new System.Drawing.Size(61, 20);
@@ -1906,6 +1953,7 @@
             // 
             // txtFlexaoEOmbro
             // 
+            this.txtFlexaoEOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Flexao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
             this.txtFlexaoEOmbro.Location = new System.Drawing.Point(142, 46);
             this.txtFlexaoEOmbro.Name = "txtFlexaoEOmbro";
             this.txtFlexaoEOmbro.Size = new System.Drawing.Size(61, 20);
@@ -1913,6 +1961,7 @@
             // 
             // txtExtensaoDOmbro
             // 
+            this.txtExtensaoDOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Extensao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtExtensaoDOmbro.Location = new System.Drawing.Point(142, 174);
             this.txtExtensaoDOmbro.Name = "txtExtensaoDOmbro";
             this.txtExtensaoDOmbro.Size = new System.Drawing.Size(62, 20);
@@ -1920,6 +1969,7 @@
             // 
             // txtExtensaoEOmbro
             // 
+            this.txtExtensaoEOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Extensao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtExtensaoEOmbro.Location = new System.Drawing.Point(142, 200);
             this.txtExtensaoEOmbro.Name = "txtExtensaoEOmbro";
             this.txtExtensaoEOmbro.Size = new System.Drawing.Size(61, 20);
@@ -1927,6 +1977,7 @@
             // 
             // txtAbducaoDOmbro
             // 
+            this.txtAbducaoDOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Abducao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N3"));
             this.txtAbducaoDOmbro.Location = new System.Drawing.Point(142, 123);
             this.txtAbducaoDOmbro.Name = "txtAbducaoDOmbro";
             this.txtAbducaoDOmbro.Size = new System.Drawing.Size(61, 20);
@@ -1934,6 +1985,7 @@
             // 
             // txtAbducaoEOmbro
             // 
+            this.txtAbducaoEOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Abducao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
             this.txtAbducaoEOmbro.Location = new System.Drawing.Point(142, 148);
             this.txtAbducaoEOmbro.Name = "txtAbducaoEOmbro";
             this.txtAbducaoEOmbro.Size = new System.Drawing.Size(61, 20);
@@ -1941,6 +1993,7 @@
             // 
             // txtAducaoDOmbro
             // 
+            this.txtAducaoDOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Aducao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtAducaoDOmbro.Location = new System.Drawing.Point(142, 72);
             this.txtAducaoDOmbro.Name = "txtAducaoDOmbro";
             this.txtAducaoDOmbro.Size = new System.Drawing.Size(61, 20);
@@ -1948,13 +2001,15 @@
             // 
             // txtAducaoEOmbro
             // 
-            this.txtAducaoEOmbro.Location = new System.Drawing.Point(142, 97);
+            this.txtAducaoEOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "Aducao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
+            this.txtAducaoEOmbro.Location = new System.Drawing.Point(142, 96);
             this.txtAducaoEOmbro.Name = "txtAducaoEOmbro";
             this.txtAducaoEOmbro.Size = new System.Drawing.Size(61, 20);
             this.txtAducaoEOmbro.TabIndex = 29;
             // 
             // txtRotInemaD
             // 
+            this.txtRotInemaD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "RotInerna_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N4"));
             this.txtRotInemaD.Location = new System.Drawing.Point(143, 226);
             this.txtRotInemaD.Name = "txtRotInemaD";
             this.txtRotInemaD.Size = new System.Drawing.Size(61, 20);
@@ -1962,24 +2017,27 @@
             // 
             // txtRotInemaE
             // 
+            this.txtRotInemaE.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "RotInerna_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtRotInemaE.Location = new System.Drawing.Point(143, 252);
             this.txtRotInemaE.Name = "txtRotInemaE";
             this.txtRotInemaE.Size = new System.Drawing.Size(61, 20);
             this.txtRotInemaE.TabIndex = 37;
             // 
-            // rotExterna_DireitaTextBox
+            // txtRotExterDO
             // 
-            this.rotExterna_DireitaTextBox.Location = new System.Drawing.Point(127, 291);
-            this.rotExterna_DireitaTextBox.Name = "rotExterna_DireitaTextBox";
-            this.rotExterna_DireitaTextBox.Size = new System.Drawing.Size(54, 20);
-            this.rotExterna_DireitaTextBox.TabIndex = 43;
+            this.txtRotExterDO.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "RotExterna_Direita", true));
+            this.txtRotExterDO.Location = new System.Drawing.Point(142, 278);
+            this.txtRotExterDO.Name = "txtRotExterDO";
+            this.txtRotExterDO.Size = new System.Drawing.Size(62, 20);
+            this.txtRotExterDO.TabIndex = 43;
             // 
-            // rotExterna_EsquerdaTextBox
+            // txtRotExterEO
             // 
-            this.rotExterna_EsquerdaTextBox.Location = new System.Drawing.Point(127, 317);
-            this.rotExterna_EsquerdaTextBox.Name = "rotExterna_EsquerdaTextBox";
-            this.rotExterna_EsquerdaTextBox.Size = new System.Drawing.Size(54, 20);
-            this.rotExterna_EsquerdaTextBox.TabIndex = 45;
+            this.txtRotExterEO.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ombroBindingSource, "RotExterna_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
+            this.txtRotExterEO.Location = new System.Drawing.Point(142, 304);
+            this.txtRotExterEO.Name = "txtRotExterEO";
+            this.txtRotExterEO.Size = new System.Drawing.Size(62, 20);
+            this.txtRotExterEO.TabIndex = 45;
             // 
             // grpTronco
             // 
@@ -2070,7 +2128,7 @@
             // 
             // txtInclinacaoE
             // 
-            this.txtInclinacaoE.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_TroncoBindingSource, "Inclinacao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N6"));
+            this.txtInclinacaoE.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_TroncoBindingSource, "Inclinacao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N6"));
             this.txtInclinacaoE.Location = new System.Drawing.Point(122, 193);
             this.txtInclinacaoE.Name = "txtInclinacaoE";
             this.txtInclinacaoE.Size = new System.Drawing.Size(60, 20);
@@ -2124,6 +2182,7 @@
             // 
             // txtExtensaoDC
             // 
+            this.txtExtensaoDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_CervicalBindingSource, "Extensao_Direita", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtExtensaoDC.Location = new System.Drawing.Point(120, 111);
             this.txtExtensaoDC.Name = "txtExtensaoDC";
             this.txtExtensaoDC.Size = new System.Drawing.Size(57, 20);
@@ -2131,6 +2190,7 @@
             // 
             // extensao_EsquerdaTextBox
             // 
+            this.extensao_EsquerdaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_CervicalBindingSource, "Extensao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.extensao_EsquerdaTextBox.Location = new System.Drawing.Point(121, 136);
             this.extensao_EsquerdaTextBox.Name = "extensao_EsquerdaTextBox";
             this.extensao_EsquerdaTextBox.Size = new System.Drawing.Size(56, 20);
@@ -2146,6 +2206,7 @@
             // 
             // txtRotacaoEC
             // 
+            this.txtRotacaoEC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_CervicalBindingSource, "Rotacao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N5"));
             this.txtRotacaoEC.Location = new System.Drawing.Point(119, 87);
             this.txtRotacaoEC.Name = "txtRotacaoEC";
             this.txtRotacaoEC.Size = new System.Drawing.Size(57, 20);
@@ -2153,6 +2214,7 @@
             // 
             // txtInclinacaoDOmbro
             // 
+            this.txtInclinacaoDOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_CervicalBindingSource, "Inclinacao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
             this.txtInclinacaoDOmbro.Location = new System.Drawing.Point(119, 162);
             this.txtInclinacaoDOmbro.Name = "txtInclinacaoDOmbro";
             this.txtInclinacaoDOmbro.Size = new System.Drawing.Size(58, 20);
@@ -2160,6 +2222,7 @@
             // 
             // txtInclinacaoEOmbro
             // 
+            this.txtInclinacaoEOmbro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adm_CervicalBindingSource, "Inclinacao_Esquerda", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N5"));
             this.txtInclinacaoEOmbro.Location = new System.Drawing.Point(119, 187);
             this.txtInclinacaoEOmbro.Name = "txtInclinacaoEOmbro";
             this.txtInclinacaoEOmbro.Size = new System.Drawing.Size(57, 20);
@@ -2216,6 +2279,7 @@
             // 
             // cmbSexo
             // 
+            this.cmbSexo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "sexo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "Feminino",
@@ -2236,6 +2300,7 @@
             // 
             // txtEndereco
             // 
+            this.txtEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "endereco", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtEndereco.Location = new System.Drawing.Point(66, 88);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(661, 20);
@@ -2243,6 +2308,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtEmail.Location = new System.Drawing.Point(45, 114);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(682, 20);
@@ -2250,6 +2316,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "telefone", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "(##)#####-####"));
             this.txtTelefone.Location = new System.Drawing.Point(588, 33);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(139, 20);
@@ -2257,6 +2324,7 @@
             // 
             // txtCidade
             // 
+            this.txtCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "cidade", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtCidade.Location = new System.Drawing.Point(390, 32);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(138, 20);
@@ -2264,6 +2332,7 @@
             // 
             // txtResponsavel
             // 
+            this.txtResponsavel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "responsavel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtResponsavel.Location = new System.Drawing.Point(79, 59);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.Size = new System.Drawing.Size(648, 20);
@@ -2271,6 +2340,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "nome", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtNome.Location = new System.Drawing.Point(122, 6);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(605, 20);
@@ -2389,20 +2459,10 @@
             this.joelhoBindingSource.DataMember = "Joelho";
             this.joelhoBindingSource.DataSource = this.masterDataSet;
             // 
-            // ombroBindingSource
-            // 
-            this.ombroBindingSource.DataMember = "Ombro";
-            this.ombroBindingSource.DataSource = this.masterDataSet;
-            // 
             // peBindingSource
             // 
             this.peBindingSource.DataMember = "Pe";
             this.peBindingSource.DataSource = this.masterDataSet;
-            // 
-            // quadrilBindingSource7
-            // 
-            this.quadrilBindingSource7.DataMember = "Quadril";
-            this.quadrilBindingSource7.DataSource = this.masterDataSet;
             // 
             // adm_CotoveloTableAdapter
             // 
@@ -2438,7 +2498,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(1050, 274);
+            this.btnSalvar.Location = new System.Drawing.Point(1129, 488);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(120, 46);
             this.btnSalvar.TabIndex = 229;
@@ -2477,6 +2537,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.adm_PunhoBindingSource)).EndInit();
             this.grpQuadril.ResumeLayout(false);
             this.grpQuadril.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quadrilBindingSource7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ombroBindingSource)).EndInit();
             this.grpOmbro.ResumeLayout(false);
             this.grpOmbro.PerformLayout();
             this.grpTronco.ResumeLayout(false);
@@ -2493,9 +2555,7 @@
             this.tbpageDiagnostico.PerformLayout();
             this.tbpageADM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ombroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quadrilBindingSource7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2575,8 +2635,8 @@
         private System.Windows.Forms.TextBox txtAducaoEOmbro;
         private System.Windows.Forms.TextBox txtRotInemaD;
         private System.Windows.Forms.TextBox txtRotInemaE;
-        private System.Windows.Forms.TextBox rotExterna_DireitaTextBox;
-        private System.Windows.Forms.TextBox rotExterna_EsquerdaTextBox;
+        private System.Windows.Forms.TextBox txtRotExterDO;
+        private System.Windows.Forms.TextBox txtRotExterEO;
         private System.Windows.Forms.GroupBox grpTronco;
         private System.Windows.Forms.TextBox txtFlexaoD;
         private System.Windows.Forms.TextBox txtFlexaoE;
