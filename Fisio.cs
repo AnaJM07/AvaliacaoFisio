@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+
 
 namespace FisioForms
 {
@@ -23,7 +21,7 @@ namespace FisioForms
         Joelho objJoelho;
         Pe objPe;
 
-        
+
         FisioModel _context;
         public Fisio()
         {
@@ -49,33 +47,15 @@ namespace FisioForms
             joelhoBindingSource.DataSource = objJoelho;
             quadrilBindingSource7.DataSource = objQuadril;
             tornozeloBindingSource.DataSource = objTornozelo;
-             peBindingSource.DataSource = objPe;
+            peBindingSource.DataSource = objPe;
+
+ 
 
         }
 
         private void Fisio_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Tornozelo'. Você pode movê-la ou removê-la conforme necessário.
-            this.tornozeloTableAdapter.Fill(this.masterDataSet.Tornozelo);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Quadril'. Você pode movê-la ou removê-la conforme necessário.
-            this.quadrilTableAdapter.Fill(this.masterDataSet.Quadril);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Pe'. Você pode movê-la ou removê-la conforme necessário.
-            this.peTableAdapter.Fill(this.masterDataSet.Pe);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Ombro'. Você pode movê-la ou removê-la conforme necessário.
-            this.ombroTableAdapter.Fill(this.masterDataSet.Ombro);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Joelho'. Você pode movê-la ou removê-la conforme necessário.
-            this.joelhoTableAdapter.Fill(this.masterDataSet.Joelho);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Adm_Tronco'. Você pode movê-la ou removê-la conforme necessário.
-            this.adm_TroncoTableAdapter.Fill(this.masterDataSet.Adm_Tronco);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Adm_Punho'. Você pode movê-la ou removê-la conforme necessário.
-            this.adm_PunhoTableAdapter.Fill(this.masterDataSet.Adm_Punho);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Adm_Cotovelo'. Você pode movê-la ou removê-la conforme necessário.
-            this.adm_CotoveloTableAdapter.Fill(this.masterDataSet.Adm_Cotovelo);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Paciente'. Você pode movê-la ou removê-la conforme necessário.
-            this.pacienteTableAdapter.Fill(this.masterDataSet.Paciente);
-            // TODO: esta linha de código carrega dados na tabela 'masterDataSet.Adm_Cervical'. Você pode movê-la ou removê-la conforme necessário.
-            this.adm_CervicalTableAdapter.Fill(this.masterDataSet.Adm_Cervical);
-
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -90,6 +70,47 @@ namespace FisioForms
             _context.Quadril.Add(objQuadril);
             _context.Tornozelo.Add(objTornozelo);
             _context.Pe.Add(objPe);
+            MessageBox.Show("Salvo com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.pacienteTableAdapter.Fill(this.masterDataSet.Paciente);
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                {
+                    FisioReport rpt = new FisioReport();
+                    SqlConnection conn;
+                    SqlCommand cmd = new SqlCommand();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    DataSet ds = new DataSet();
+
+
+                    conn = new SqlConnection("Data Source = DESKTOP-994SM15; Initial Catalog=master; Integrated Security = True");
+                    cmd.Connection = conn;
+                    cmd.CommandText = "Select * from Paciente";
+                    cmd.CommandType = CommandType.Text;
+
+                    da.SelectCommand = cmd;
+                    da.Fill(ds, "Customers");
+
+                    rpt.SetDataSource(ds);
+
+                    crystalReportViewer1.ReportSource = rpt;
+                    crystalReportViewer1.Refresh();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(null, "Ocorreu um erro:\n" + ex.Message, "Erro:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
