@@ -47,8 +47,6 @@
             System.Windows.Forms.Label terapiasConcomitantesLabel;
             System.Windows.Forms.Label terapiasPreviasLabel;
             System.Windows.Forms.Label medicamentosLabel;
-            System.Windows.Forms.Label avaliacaoFunLabel;
-            System.Windows.Forms.Label antecedentesFamLabel;
             System.Windows.Forms.Label cirurgiaPreviasLabel;
             System.Windows.Forms.Label forcaMuscularLabel;
             System.Windows.Forms.Label palpacaoLabel;
@@ -126,11 +124,12 @@
             System.Windows.Forms.Label aducao_DireitaLabel1;
             System.Windows.Forms.Label rotInerna_DireitaLabel1;
             System.Windows.Forms.Label rotInerna_EsquerdaLabel1;
+            System.Windows.Forms.Label avaliacaoFunLabel;
+            System.Windows.Forms.Label antecendetesFamLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fisio));
             this.grpPe = new System.Windows.Forms.GroupBox();
             this.inversao_DireitaTextBox = new System.Windows.Forms.TextBox();
             this.peBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masterDataSet = new FisioForms.masterDataSet();
             this.inversao_EsquerdaTextBox = new System.Windows.Forms.TextBox();
             this.txtEversaoD = new System.Windows.Forms.TextBox();
             this.txtEversaoE = new System.Windows.Forms.TextBox();
@@ -145,14 +144,13 @@
             this.txtSupinacaoD = new System.Windows.Forms.TextBox();
             this.txtSupinacaoE = new System.Windows.Forms.TextBox();
             this.txtObjetivo = new System.Windows.Forms.TextBox();
-            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pacienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.masterDataSet2 = new FisioForms.masterDataSet();
             this.txtDiagFisio = new System.Windows.Forms.TextBox();
             this.txtExamesComp = new System.Windows.Forms.TextBox();
             this.txtTerapiasConco = new System.Windows.Forms.TextBox();
             this.txtTerapiasPrev = new System.Windows.Forms.TextBox();
             this.medicamentosTextBox = new System.Windows.Forms.TextBox();
-            this.txtAvaliacaoFun = new System.Windows.Forms.TextBox();
-            this.txtAntecFam = new System.Windows.Forms.TextBox();
             this.txtCirurgiasPrev = new System.Windows.Forms.TextBox();
             this.txtForcaMusc = new System.Windows.Forms.ComboBox();
             this.palpacaoTextBox = new System.Windows.Forms.TextBox();
@@ -246,26 +244,29 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.tbpageDiagnostico = new System.Windows.Forms.TabPage();
+            this.txtAntecedentesFam = new System.Windows.Forms.TextBox();
+            this.avaliacaoFunTextBox = new System.Windows.Forms.TextBox();
             this.hmaTextBox = new System.Windows.Forms.TextBox();
             this.tbpageADM = new System.Windows.Forms.TabPage();
-            this.adm_CervicalTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_CervicalTableAdapter();
-            this.tableAdapterManager = new FisioForms.masterDataSetTableAdapters.TableAdapterManager();
-            this.pacienteTableAdapter = new FisioForms.masterDataSetTableAdapters.PacienteTableAdapter();
-            this.joelhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.adm_CotoveloTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_CotoveloTableAdapter();
-            this.adm_PunhoTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_PunhoTableAdapter();
-            this.adm_TroncoTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_TroncoTableAdapter();
-            this.joelhoTableAdapter = new FisioForms.masterDataSetTableAdapters.JoelhoTableAdapter();
-            this.ombroTableAdapter = new FisioForms.masterDataSetTableAdapters.OmbroTableAdapter();
-            this.peTableAdapter = new FisioForms.masterDataSetTableAdapters.PeTableAdapter();
-            this.quadrilTableAdapter = new FisioForms.masterDataSetTableAdapters.QuadrilTableAdapter();
-            this.tornozeloTableAdapter = new FisioForms.masterDataSetTableAdapters.TornozeloTableAdapter();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.fisioReport1 = new FisioForms.FisioReport();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.joelhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.adm_CervicalTableAdapter1 = new FisioForms.masterDataSetTableAdapters.Adm_CervicalTableAdapter();
+            this.adm_CotoveloTableAdapter1 = new FisioForms.masterDataSetTableAdapters.Adm_CotoveloTableAdapter();
+            this.adm_PunhoTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_PunhoTableAdapter();
+            this.adm_TroncoTableAdapter = new FisioForms.masterDataSetTableAdapters.Adm_TroncoTableAdapter();
+            this.joelhoTableAdapter1 = new FisioForms.masterDataSetTableAdapters.JoelhoTableAdapter();
+            this.ombroTableAdapter1 = new FisioForms.masterDataSetTableAdapters.OmbroTableAdapter();
+            this.pacienteTableAdapter1 = new FisioForms.masterDataSetTableAdapters.PacienteTableAdapter();
+            this.peTableAdapter1 = new FisioForms.masterDataSetTableAdapters.PeTableAdapter();
+            this.quadrilTableAdapter = new FisioForms.masterDataSetTableAdapters.QuadrilTableAdapter();
+            this.tornozeloTableAdapter = new FisioForms.masterDataSetTableAdapters.TornozeloTableAdapter();
             this.FisioReport2 = new FisioForms.FisioReport();
+            this.fisioReport1 = new FisioForms.FisioReport();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.CrystalReport12 = new FisioForms.CrystalReport1();
             inversao_DireitaLabel = new System.Windows.Forms.Label();
             inversao_EsquerdaLabel = new System.Windows.Forms.Label();
             eversao_DireitaLabel = new System.Windows.Forms.Label();
@@ -284,8 +285,6 @@
             terapiasConcomitantesLabel = new System.Windows.Forms.Label();
             terapiasPreviasLabel = new System.Windows.Forms.Label();
             medicamentosLabel = new System.Windows.Forms.Label();
-            avaliacaoFunLabel = new System.Windows.Forms.Label();
-            antecedentesFamLabel = new System.Windows.Forms.Label();
             cirurgiaPreviasLabel = new System.Windows.Forms.Label();
             forcaMuscularLabel = new System.Windows.Forms.Label();
             palpacaoLabel = new System.Windows.Forms.Label();
@@ -363,12 +362,14 @@
             aducao_DireitaLabel1 = new System.Windows.Forms.Label();
             rotInerna_DireitaLabel1 = new System.Windows.Forms.Label();
             rotInerna_EsquerdaLabel1 = new System.Windows.Forms.Label();
+            avaliacaoFunLabel = new System.Windows.Forms.Label();
+            antecendetesFamLabel = new System.Windows.Forms.Label();
             this.grpPe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
             this.grpCotovelo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adm_cotoveloBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet2)).BeginInit();
             this.grpSinaisVitais.SuspendLayout();
             this.grpTornozelo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tornozeloBindingSource)).BeginInit();
@@ -387,8 +388,8 @@
             this.tbpageDadosP.SuspendLayout();
             this.tbpageDiagnostico.SuspendLayout();
             this.tbpageADM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // inversao_DireitaLabel
@@ -552,24 +553,6 @@
             medicamentosLabel.Size = new System.Drawing.Size(79, 13);
             medicamentosLabel.TabIndex = 202;
             medicamentosLabel.Text = "Medicamentos:";
-            // 
-            // avaliacaoFunLabel
-            // 
-            avaliacaoFunLabel.AutoSize = true;
-            avaliacaoFunLabel.Location = new System.Drawing.Point(422, 68);
-            avaliacaoFunLabel.Name = "avaliacaoFunLabel";
-            avaliacaoFunLabel.Size = new System.Drawing.Size(106, 13);
-            avaliacaoFunLabel.TabIndex = 200;
-            avaliacaoFunLabel.Text = "Avaliacäo Funcional:";
-            // 
-            // antecedentesFamLabel
-            // 
-            antecedentesFamLabel.AutoSize = true;
-            antecedentesFamLabel.Location = new System.Drawing.Point(9, 320);
-            antecedentesFamLabel.Name = "antecedentesFamLabel";
-            antecedentesFamLabel.Size = new System.Drawing.Size(117, 13);
-            antecedentesFamLabel.TabIndex = 197;
-            antecedentesFamLabel.Text = "Antecedentes Familiar: ";
             // 
             // cirurgiaPreviasLabel
             // 
@@ -1264,6 +1247,24 @@
             rotInerna_EsquerdaLabel1.TabIndex = 66;
             rotInerna_EsquerdaLabel1.Text = "Rotação Interna Esquerda:";
             // 
+            // avaliacaoFunLabel
+            // 
+            avaliacaoFunLabel.AutoSize = true;
+            avaliacaoFunLabel.Location = new System.Drawing.Point(448, 68);
+            avaliacaoFunLabel.Name = "avaliacaoFunLabel";
+            avaliacaoFunLabel.Size = new System.Drawing.Size(77, 13);
+            avaliacaoFunLabel.TabIndex = 213;
+            avaliacaoFunLabel.Text = "avaliacao Fun:";
+            // 
+            // antecendetesFamLabel
+            // 
+            antecendetesFamLabel.AutoSize = true;
+            antecendetesFamLabel.Location = new System.Drawing.Point(14, 320);
+            antecendetesFamLabel.Name = "antecendetesFamLabel";
+            antecendetesFamLabel.Size = new System.Drawing.Size(98, 13);
+            antecendetesFamLabel.TabIndex = 214;
+            antecendetesFamLabel.Text = "antecendetes Fam:";
+            // 
             // grpPe
             // 
             this.grpPe.Controls.Add(inversao_DireitaLabel);
@@ -1292,12 +1293,6 @@
             // peBindingSource
             // 
             this.peBindingSource.DataMember = "Pe";
-            this.peBindingSource.DataSource = this.masterDataSet;
-            // 
-            // masterDataSet
-            // 
-            this.masterDataSet.DataSetName = "masterDataSet";
-            this.masterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inversao_EsquerdaTextBox
             // 
@@ -1359,7 +1354,6 @@
             // adm_cotoveloBindingSource
             // 
             this.adm_cotoveloBindingSource.DataMember = "Adm_Cotovelo";
-            this.adm_cotoveloBindingSource.DataSource = this.masterDataSet;
             // 
             // txtFlexaoEsquerda
             // 
@@ -1420,21 +1414,26 @@
             // 
             // txtObjetivo
             // 
-            this.txtObjetivo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "Objetivo", true));
+            this.txtObjetivo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "DiagnosticoFisioterapeutico", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtObjetivo.Location = new System.Drawing.Point(55, 207);
             this.txtObjetivo.Multiline = true;
             this.txtObjetivo.Name = "txtObjetivo";
             this.txtObjetivo.Size = new System.Drawing.Size(807, 46);
             this.txtObjetivo.TabIndex = 213;
             // 
-            // pacienteBindingSource
+            // pacienteBindingSource1
             // 
-            this.pacienteBindingSource.DataMember = "Paciente";
-            this.pacienteBindingSource.DataSource = this.masterDataSet;
+            this.pacienteBindingSource1.DataMember = "Paciente";
+            this.pacienteBindingSource1.DataSource = this.masterDataSet2;
+            // 
+            // masterDataSet2
+            // 
+            this.masterDataSet2.DataSetName = "masterDataSet";
+            this.masterDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtDiagFisio
             // 
-            this.txtDiagFisio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "DiagnosticoFisioterapeutico", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDiagFisio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "DiagnosticoFisioterapeutico", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtDiagFisio.Location = new System.Drawing.Point(560, 138);
             this.txtDiagFisio.Name = "txtDiagFisio";
             this.txtDiagFisio.Size = new System.Drawing.Size(302, 20);
@@ -1442,7 +1441,7 @@
             // 
             // txtExamesComp
             // 
-            this.txtExamesComp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "examesComplementares", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtExamesComp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "examesComplementares", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtExamesComp.Location = new System.Drawing.Point(136, 138);
             this.txtExamesComp.Name = "txtExamesComp";
             this.txtExamesComp.Size = new System.Drawing.Size(273, 20);
@@ -1450,7 +1449,7 @@
             // 
             // txtTerapiasConco
             // 
-            this.txtTerapiasConco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "terapiasConcomitantes", true));
+            this.txtTerapiasConco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "terapiasConcomitantes", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtTerapiasConco.Location = new System.Drawing.Point(545, 115);
             this.txtTerapiasConco.Name = "txtTerapiasConco";
             this.txtTerapiasConco.Size = new System.Drawing.Size(317, 20);
@@ -1458,7 +1457,7 @@
             // 
             // txtTerapiasPrev
             // 
-            this.txtTerapiasPrev.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "terapiasPrevias", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtTerapiasPrev.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "terapiasPrevias", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtTerapiasPrev.Location = new System.Drawing.Point(99, 112);
             this.txtTerapiasPrev.Name = "txtTerapiasPrev";
             this.txtTerapiasPrev.Size = new System.Drawing.Size(310, 20);
@@ -1466,31 +1465,15 @@
             // 
             // medicamentosTextBox
             // 
-            this.medicamentosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "medicamentos", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.medicamentosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "medicamentos", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.medicamentosTextBox.Location = new System.Drawing.Point(531, 91);
             this.medicamentosTextBox.Name = "medicamentosTextBox";
             this.medicamentosTextBox.Size = new System.Drawing.Size(331, 20);
             this.medicamentosTextBox.TabIndex = 203;
             // 
-            // txtAvaliacaoFun
-            // 
-            this.txtAvaliacaoFun.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "avalicaoFun", true));
-            this.txtAvaliacaoFun.Location = new System.Drawing.Point(531, 65);
-            this.txtAvaliacaoFun.Name = "txtAvaliacaoFun";
-            this.txtAvaliacaoFun.Size = new System.Drawing.Size(331, 20);
-            this.txtAvaliacaoFun.TabIndex = 201;
-            // 
-            // txtAntecFam
-            // 
-            this.txtAntecFam.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "antecendetesFam", true));
-            this.txtAntecFam.Location = new System.Drawing.Point(129, 317);
-            this.txtAntecFam.Name = "txtAntecFam";
-            this.txtAntecFam.Size = new System.Drawing.Size(343, 20);
-            this.txtAntecFam.TabIndex = 199;
-            // 
             // txtCirurgiasPrev
             // 
-            this.txtCirurgiasPrev.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "cirurgiaPrevias", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtCirurgiasPrev.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "cirurgiaPrevias", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtCirurgiasPrev.Location = new System.Drawing.Point(92, 86);
             this.txtCirurgiasPrev.Name = "txtCirurgiasPrev";
             this.txtCirurgiasPrev.Size = new System.Drawing.Size(317, 20);
@@ -1498,7 +1481,7 @@
             // 
             // txtForcaMusc
             // 
-            this.txtForcaMusc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "forcaMuscular", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtForcaMusc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "forcaMuscular", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtForcaMusc.FormattingEnabled = true;
             this.txtForcaMusc.Items.AddRange(new object[] {
             "0 - Ausência de contração",
@@ -1514,7 +1497,7 @@
             // 
             // palpacaoTextBox
             // 
-            this.palpacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "palpacao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.palpacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "palpacao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.palpacaoTextBox.Location = new System.Drawing.Point(66, 34);
             this.palpacaoTextBox.Name = "palpacaoTextBox";
             this.palpacaoTextBox.Size = new System.Drawing.Size(796, 20);
@@ -1522,7 +1505,7 @@
             // 
             // txtInspecao
             // 
-            this.txtInspecao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "inspecao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtInspecao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "inspecao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtInspecao.Location = new System.Drawing.Point(513, 8);
             this.txtInspecao.Name = "txtInspecao";
             this.txtInspecao.Size = new System.Drawing.Size(349, 20);
@@ -1530,7 +1513,7 @@
             // 
             // txtLocomocao
             // 
-            this.txtLocomocao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "locomocao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtLocomocao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "locomocao", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtLocomocao.Location = new System.Drawing.Point(77, 8);
             this.txtLocomocao.Name = "txtLocomocao";
             this.txtLocomocao.Size = new System.Drawing.Size(371, 20);
@@ -1538,6 +1521,7 @@
             // 
             // txtEstadoG
             // 
+            this.txtEstadoG.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "estadoGeral", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtEstadoG.Location = new System.Drawing.Point(90, 291);
             this.txtEstadoG.Name = "txtEstadoG";
             this.txtEstadoG.Size = new System.Drawing.Size(772, 20);
@@ -1561,7 +1545,7 @@
             // 
             // ttxTemp
             // 
-            this.ttxTemp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "temp", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N4"));
+            this.ttxTemp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "temp", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ttxTemp.Location = new System.Drawing.Point(783, 27);
             this.ttxTemp.Name = "ttxTemp";
             this.ttxTemp.Size = new System.Drawing.Size(52, 20);
@@ -1569,7 +1553,7 @@
             // 
             // txtPa
             // 
-            this.txtPa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "pa", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "pa", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPa.Location = new System.Drawing.Point(588, 27);
             this.txtPa.Name = "txtPa";
             this.txtPa.Size = new System.Drawing.Size(61, 20);
@@ -1577,7 +1561,7 @@
             // 
             // txtFc
             // 
-            this.txtFc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "fc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
+            this.txtFc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "fc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtFc.Location = new System.Drawing.Point(115, 27);
             this.txtFc.Name = "txtFc";
             this.txtFc.Size = new System.Drawing.Size(66, 20);
@@ -1585,7 +1569,7 @@
             // 
             // txtFr
             // 
-            this.txtFr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "fr", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N3"));
+            this.txtFr.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "fr", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtFr.Location = new System.Drawing.Point(373, 27);
             this.txtFr.Name = "txtFr";
             this.txtFr.Size = new System.Drawing.Size(60, 20);
@@ -1593,7 +1577,7 @@
             // 
             // txtAltura
             // 
-            this.txtAltura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "peso", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtAltura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "altura", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtAltura.Location = new System.Drawing.Point(701, 317);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(52, 20);
@@ -1601,7 +1585,7 @@
             // 
             // txtPeso
             // 
-            this.txtPeso.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "peso", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPeso.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "peso", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPeso.Location = new System.Drawing.Point(602, 317);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(50, 20);
@@ -1609,7 +1593,7 @@
             // 
             // txtQxPrincipal
             // 
-            this.txtQxPrincipal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "qxPrincipal", true));
+            this.txtQxPrincipal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "qxPrincipal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtQxPrincipal.Location = new System.Drawing.Point(545, 259);
             this.txtQxPrincipal.Name = "txtQxPrincipal";
             this.txtQxPrincipal.Size = new System.Drawing.Size(317, 20);
@@ -1617,7 +1601,7 @@
             // 
             // txtDiagnostico
             // 
-            this.txtDiagnostico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "estadoGeral", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDiagnostico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "diagnostico", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtDiagnostico.Location = new System.Drawing.Point(78, 262);
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(366, 20);
@@ -1662,7 +1646,6 @@
             // 
             this.tornozeloBindingSource.AllowNew = true;
             this.tornozeloBindingSource.DataMember = "Tornozelo";
-            this.tornozeloBindingSource.DataSource = this.masterDataSet;
             // 
             // txtPlantiflexaoE
             // 
@@ -1724,7 +1707,6 @@
             // adm_PunhoBindingSource
             // 
             this.adm_PunhoBindingSource.DataMember = "Adm_Punho";
-            this.adm_PunhoBindingSource.DataSource = this.masterDataSet;
             // 
             // txtFlexaoEPunho
             // 
@@ -1826,7 +1808,6 @@
             // quadrilBindingSource7
             // 
             this.quadrilBindingSource7.DataMember = "Quadril";
-            this.quadrilBindingSource7.DataSource = this.masterDataSet;
             // 
             // txtRotacaoExtD
             // 
@@ -1871,7 +1852,6 @@
             // ombroBindingSource
             // 
             this.ombroBindingSource.DataMember = "Ombro";
-            this.ombroBindingSource.DataSource = this.masterDataSet;
             // 
             // txtRotacaoIntD
             // 
@@ -2087,7 +2067,6 @@
             // 
             this.adm_TroncoBindingSource.AllowNew = true;
             this.adm_TroncoBindingSource.DataMember = "Adm_Tronco";
-            this.adm_TroncoBindingSource.DataSource = this.masterDataSet;
             // 
             // txtFlexaoE
             // 
@@ -2181,7 +2160,6 @@
             // adm_CervicalBindingSource
             // 
             this.adm_CervicalBindingSource.DataMember = "Adm_Cervical";
-            this.adm_CervicalBindingSource.DataSource = this.masterDataSet;
             // 
             // txtFlexaoEC
             // 
@@ -2242,9 +2220,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1050, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(940, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 175);
+            this.pictureBox1.Size = new System.Drawing.Size(362, 233);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 227;
             this.pictureBox1.TabStop = false;
@@ -2255,7 +2233,7 @@
             this.tabControl1.Controls.Add(this.tbpageDiagnostico);
             this.tabControl1.Controls.Add(this.tbpageADM);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(5, 7);
+            this.tabControl1.Location = new System.Drawing.Point(21, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(917, 718);
@@ -2291,7 +2269,7 @@
             // 
             // cmbSexo
             // 
-            this.cmbSexo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "sexo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cmbSexo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "sexo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "Feminino",
@@ -2304,6 +2282,7 @@
             // 
             // DTPDataNasc
             // 
+            this.DTPDataNasc.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pacienteBindingSource1, "dtNascimento", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DTPDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPDataNasc.Location = new System.Drawing.Point(72, 32);
             this.DTPDataNasc.Name = "DTPDataNasc";
@@ -2312,7 +2291,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "endereco", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "endereco", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtEndereco.Location = new System.Drawing.Point(66, 88);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(661, 20);
@@ -2320,7 +2299,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtEmail.Location = new System.Drawing.Point(45, 114);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(682, 20);
@@ -2328,7 +2307,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "telefone", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "(##)#####-####"));
+            this.txtTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "telefone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtTelefone.Location = new System.Drawing.Point(588, 33);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(139, 20);
@@ -2336,7 +2315,7 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "cidade", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "cidade", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtCidade.Location = new System.Drawing.Point(390, 32);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(138, 20);
@@ -2344,7 +2323,7 @@
             // 
             // txtResponsavel
             // 
-            this.txtResponsavel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "responsavel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtResponsavel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "responsavel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtResponsavel.Location = new System.Drawing.Point(79, 59);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.Size = new System.Drawing.Size(648, 20);
@@ -2352,7 +2331,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "nome", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "nome", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtNome.Location = new System.Drawing.Point(122, 6);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(605, 20);
@@ -2369,6 +2348,10 @@
             // tbpageDiagnostico
             // 
             this.tbpageDiagnostico.AutoScroll = true;
+            this.tbpageDiagnostico.Controls.Add(antecendetesFamLabel);
+            this.tbpageDiagnostico.Controls.Add(this.txtAntecedentesFam);
+            this.tbpageDiagnostico.Controls.Add(avaliacaoFunLabel);
+            this.tbpageDiagnostico.Controls.Add(this.avaliacaoFunTextBox);
             this.tbpageDiagnostico.Controls.Add(hmaLabel);
             this.tbpageDiagnostico.Controls.Add(this.hmaTextBox);
             this.tbpageDiagnostico.Controls.Add(locomocaoLabel);
@@ -2381,16 +2364,12 @@
             this.tbpageDiagnostico.Controls.Add(this.txtForcaMusc);
             this.tbpageDiagnostico.Controls.Add(forcaMuscularLabel);
             this.tbpageDiagnostico.Controls.Add(this.txtCirurgiasPrev);
-            this.tbpageDiagnostico.Controls.Add(antecedentesFamLabel);
             this.tbpageDiagnostico.Controls.Add(objetivoLabel);
-            this.tbpageDiagnostico.Controls.Add(this.txtAntecFam);
             this.tbpageDiagnostico.Controls.Add(cirurgiaPreviasLabel);
             this.tbpageDiagnostico.Controls.Add(estadoGeralLabel);
             this.tbpageDiagnostico.Controls.Add(this.txtObjetivo);
             this.tbpageDiagnostico.Controls.Add(this.txtEstadoG);
-            this.tbpageDiagnostico.Controls.Add(this.txtAvaliacaoFun);
             this.tbpageDiagnostico.Controls.Add(this.grpSinaisVitais);
-            this.tbpageDiagnostico.Controls.Add(avaliacaoFunLabel);
             this.tbpageDiagnostico.Controls.Add(alturaLabel);
             this.tbpageDiagnostico.Controls.Add(this.medicamentosTextBox);
             this.tbpageDiagnostico.Controls.Add(this.txtAltura);
@@ -2417,9 +2396,25 @@
             this.tbpageDiagnostico.TabIndex = 1;
             this.tbpageDiagnostico.Text = "Diagnostico";
             // 
+            // txtAntecedentesFam
+            // 
+            this.txtAntecedentesFam.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "antecedentesFam", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtAntecedentesFam.Location = new System.Drawing.Point(118, 317);
+            this.txtAntecedentesFam.Name = "txtAntecedentesFam";
+            this.txtAntecedentesFam.Size = new System.Drawing.Size(347, 20);
+            this.txtAntecedentesFam.TabIndex = 215;
+            // 
+            // avaliacaoFunTextBox
+            // 
+            this.avaliacaoFunTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "avaliacaoFun", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.avaliacaoFunTextBox.Location = new System.Drawing.Point(531, 65);
+            this.avaliacaoFunTextBox.Name = "avaliacaoFunTextBox";
+            this.avaliacaoFunTextBox.Size = new System.Drawing.Size(322, 20);
+            this.avaliacaoFunTextBox.TabIndex = 214;
+            // 
             // hmaTextBox
             // 
-            this.hmaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "hma", true));
+            this.hmaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "hma", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.hmaTextBox.Location = new System.Drawing.Point(41, 164);
             this.hmaTextBox.Multiline = true;
             this.hmaTextBox.Name = "hmaTextBox";
@@ -2443,88 +2438,9 @@
             this.tbpageADM.TabIndex = 2;
             this.tbpageADM.Text = "ADM";
             // 
-            // adm_CervicalTableAdapter
-            // 
-            this.adm_CervicalTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.Adm_CervicalTableAdapter = this.adm_CervicalTableAdapter;
-            this.tableAdapterManager.Adm_CotoveloTableAdapter = null;
-            this.tableAdapterManager.Adm_PunhoTableAdapter = null;
-            this.tableAdapterManager.Adm_TroncoTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.JoelhoTableAdapter = null;
-            this.tableAdapterManager.OmbroTableAdapter = null;
-            this.tableAdapterManager.PacienteTableAdapter = null;
-            this.tableAdapterManager.PeTableAdapter = null;
-            this.tableAdapterManager.QuadrilTableAdapter = null;
-            this.tableAdapterManager.TornozeloTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = FisioForms.masterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // pacienteTableAdapter
-            // 
-            this.pacienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // joelhoBindingSource
-            // 
-            this.joelhoBindingSource.DataMember = "Joelho";
-            this.joelhoBindingSource.DataSource = this.masterDataSet;
-            // 
-            // adm_CotoveloTableAdapter
-            // 
-            this.adm_CotoveloTableAdapter.ClearBeforeFill = true;
-            // 
-            // adm_PunhoTableAdapter
-            // 
-            this.adm_PunhoTableAdapter.ClearBeforeFill = true;
-            // 
-            // adm_TroncoTableAdapter
-            // 
-            this.adm_TroncoTableAdapter.ClearBeforeFill = true;
-            // 
-            // joelhoTableAdapter
-            // 
-            this.joelhoTableAdapter.ClearBeforeFill = true;
-            // 
-            // ombroTableAdapter
-            // 
-            this.ombroTableAdapter.ClearBeforeFill = true;
-            // 
-            // peTableAdapter
-            // 
-            this.peTableAdapter.ClearBeforeFill = true;
-            // 
-            // quadrilTableAdapter
-            // 
-            this.quadrilTableAdapter.ClearBeforeFill = true;
-            // 
-            // tornozeloTableAdapter
-            // 
-            this.tornozeloTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(1129, 488);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(120, 46);
-            this.btnSalvar.TabIndex = 229;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1005, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 46);
-            this.button1.TabIndex = 230;
-            this.button1.Text = "Exibir Relatorio";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.crystalReportViewer2);
             this.tabPage1.Controls.Add(this.crystalReportViewer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -2536,23 +2452,99 @@
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.FisioReport2;
             this.crystalReportViewer1.Size = new System.Drawing.Size(903, 686);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(1141, 431);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(120, 46);
+            this.btnSalvar.TabIndex = 229;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1141, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 46);
+            this.button1.TabIndex = 230;
+            this.button1.Text = "Exibir Relatorio";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // joelhoBindingSource
+            // 
+            this.joelhoBindingSource.DataMember = "Joelho";
+            // 
+            // adm_CervicalTableAdapter1
+            // 
+            this.adm_CervicalTableAdapter1.ClearBeforeFill = true;
+            // 
+            // adm_CotoveloTableAdapter1
+            // 
+            this.adm_CotoveloTableAdapter1.ClearBeforeFill = true;
+            // 
+            // adm_PunhoTableAdapter
+            // 
+            this.adm_PunhoTableAdapter.ClearBeforeFill = true;
+            // 
+            // adm_TroncoTableAdapter
+            // 
+            this.adm_TroncoTableAdapter.ClearBeforeFill = true;
+            // 
+            // joelhoTableAdapter1
+            // 
+            this.joelhoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ombroTableAdapter1
+            // 
+            this.ombroTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pacienteTableAdapter1
+            // 
+            this.pacienteTableAdapter1.ClearBeforeFill = true;
+            // 
+            // peTableAdapter1
+            // 
+            this.peTableAdapter1.ClearBeforeFill = true;
+            // 
+            // quadrilTableAdapter
+            // 
+            this.quadrilTableAdapter.ClearBeforeFill = true;
+            // 
+            // tornozeloTableAdapter
+            // 
+            this.tornozeloTableAdapter.ClearBeforeFill = true;
+            // 
+            // crystalReportViewer2
+            // 
+            this.crystalReportViewer2.ActiveViewIndex = 0;
+            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 3);
+            this.crystalReportViewer2.Name = "crystalReportViewer2";
+            this.crystalReportViewer2.ReportSource = this.CrystalReport12;
+            this.crystalReportViewer2.Size = new System.Drawing.Size(903, 686);
+            this.crystalReportViewer2.TabIndex = 1;
+            this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer2.Load += new System.EventHandler(this.crystalReportViewer2_Load);
             // 
             // Fisio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1314, 604);
+            this.ClientSize = new System.Drawing.Size(1314, 745);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.tabControl1);
@@ -2565,11 +2557,11 @@
             this.grpPe.ResumeLayout(false);
             this.grpPe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).EndInit();
             this.grpCotovelo.ResumeLayout(false);
             this.grpCotovelo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adm_cotoveloBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.masterDataSet2)).EndInit();
             this.grpSinaisVitais.ResumeLayout(false);
             this.grpSinaisVitais.PerformLayout();
             this.grpTornozelo.ResumeLayout(false);
@@ -2597,8 +2589,8 @@
             this.tbpageDiagnostico.ResumeLayout(false);
             this.tbpageDiagnostico.PerformLayout();
             this.tbpageADM.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2606,10 +2598,7 @@
 
         #endregion
 
-        private masterDataSet masterDataSet;
         private System.Windows.Forms.BindingSource adm_CervicalBindingSource;
-        private masterDataSetTableAdapters.Adm_CervicalTableAdapter adm_CervicalTableAdapter;
-        private masterDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox grpPe;
         private System.Windows.Forms.TextBox inversao_DireitaTextBox;
         private System.Windows.Forms.TextBox inversao_EsquerdaTextBox;
@@ -2630,8 +2619,6 @@
         private System.Windows.Forms.TextBox txtTerapiasConco;
         private System.Windows.Forms.TextBox txtTerapiasPrev;
         private System.Windows.Forms.TextBox medicamentosTextBox;
-        private System.Windows.Forms.TextBox txtAvaliacaoFun;
-        private System.Windows.Forms.TextBox txtAntecFam;
         private System.Windows.Forms.TextBox txtCirurgiasPrev;
         private System.Windows.Forms.ComboBox txtForcaMusc;
         private System.Windows.Forms.TextBox palpacaoTextBox;
@@ -2702,8 +2689,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbpageDadosP;
         private System.Windows.Forms.TabPage tbpageDiagnostico;
-        private System.Windows.Forms.BindingSource pacienteBindingSource;
-        private masterDataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter;
         private System.Windows.Forms.TextBox hmaTextBox;
         private System.Windows.Forms.TabPage tbpageADM;
         private System.Windows.Forms.ComboBox cmbSexo;
@@ -2730,20 +2715,32 @@
         private System.Windows.Forms.BindingSource ombroBindingSource;
         private System.Windows.Forms.BindingSource peBindingSource;
         private System.Windows.Forms.BindingSource quadrilBindingSource7;
-        private masterDataSetTableAdapters.Adm_CotoveloTableAdapter adm_CotoveloTableAdapter;
-        private masterDataSetTableAdapters.Adm_PunhoTableAdapter adm_PunhoTableAdapter;
-        private masterDataSetTableAdapters.Adm_TroncoTableAdapter adm_TroncoTableAdapter;
-        private masterDataSetTableAdapters.JoelhoTableAdapter joelhoTableAdapter;
-        private masterDataSetTableAdapters.OmbroTableAdapter ombroTableAdapter;
-        private masterDataSetTableAdapters.PeTableAdapter peTableAdapter;
         private System.Windows.Forms.BindingSource tornozeloBindingSource;
-        private masterDataSetTableAdapters.QuadrilTableAdapter quadrilTableAdapter;
-        private masterDataSetTableAdapters.TornozeloTableAdapter tornozeloTableAdapter;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private FisioReport fisioReport1;
         private FisioReport FisioReport2;
+        private System.Windows.Forms.TextBox avaliacaoFunTextBox;
+        private masterDataSetTableAdapters.Adm_PunhoTableAdapter adm_PunhoTableAdapter1;
+        private masterDataSetTableAdapters.Adm_TroncoTableAdapter adm_TroncoTableAdapter1;
+        private masterDataSetTableAdapters.QuadrilTableAdapter quadrilTableAdapter1;
+        private masterDataSetTableAdapters.TornozeloTableAdapter tornozeloTableAdapter1;
+        private System.Windows.Forms.TextBox txtAntecedentesFam;
+        private System.Windows.Forms.BindingSource pacienteBindingSource1;
+        private masterDataSet masterDataSet2;
+        private masterDataSetTableAdapters.Adm_CervicalTableAdapter adm_CervicalTableAdapter1;
+        private masterDataSetTableAdapters.Adm_CotoveloTableAdapter adm_CotoveloTableAdapter1;
+        private masterDataSetTableAdapters.Adm_PunhoTableAdapter adm_PunhoTableAdapter;
+        private masterDataSetTableAdapters.Adm_TroncoTableAdapter adm_TroncoTableAdapter;
+        private masterDataSetTableAdapters.JoelhoTableAdapter joelhoTableAdapter1;
+        private masterDataSetTableAdapters.OmbroTableAdapter ombroTableAdapter1;
+        private masterDataSetTableAdapters.PacienteTableAdapter pacienteTableAdapter1;
+        private masterDataSetTableAdapters.PeTableAdapter peTableAdapter1;
+        private masterDataSetTableAdapters.QuadrilTableAdapter quadrilTableAdapter;
+        private masterDataSetTableAdapters.TornozeloTableAdapter tornozeloTableAdapter;
+        private FisioReport fisioReport1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
+        private CrystalReport1 CrystalReport12;
     }
 }

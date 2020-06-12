@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adm_Cervical">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Rotacao_Direita" Type="Int32" />
+    <Property Name="Rotacao_Esquerda" Type="Int32" />
+    <Property Name="Rotacao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Rotacao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Inclinacao_Direita" Type="Int32" />
+    <Property Name="Inclinacao_Esquerda" Type="Int32" />
+    <Property Name="Inclinacao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Inclinacao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Adm_Cotovelo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pronacao_Direita" Type="Int32" />
+    <Property Name="Pronacao_Esquerda" Type="Int32" />
+    <Property Name="Pronacao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pronacao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Supinacao_Direita" Type="Int32" />
+    <Property Name="Supinacao_Esquerda" Type="Int32" />
+    <Property Name="Supinacao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Supinacao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Adm_Punho">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DesvUlnar_Direita" Type="Int32" />
+    <Property Name="DesvUlnar_Esquerda" Type="Int32" />
+    <Property Name="DesvUlnar_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DesvUlnar_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DesvRadial_Direita" Type="Int32" />
+    <Property Name="DesvRadial_Esquerda" Type="Int32" />
+    <Property Name="DesvRadial_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DesvRadial_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Adm_Tronco">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Rotacao_Direita" Type="Int32" />
+    <Property Name="Rotacao_Esquerda" Type="Int32" />
+    <Property Name="Rotacao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Rotacao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Inclinacao_Direita" Type="Int32" />
+    <Property Name="Inclinacao_Esquerda" Type="Int32" />
+    <Property Name="Inclinacao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Inclinacao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Joelho">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ombro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Abducao_Direita" Type="Int32" />
+    <Property Name="Abducao_Esquerda" Type="Int32" />
+    <Property Name="Abducao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Abducao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Aducao_Direita" Type="Int32" />
+    <Property Name="Aducao_Esquerda" Type="Int32" />
+    <Property Name="Aducao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Aducao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotInerna_Direita" Type="Int32" />
+    <Property Name="RotInerna_Esquerda" Type="Int32" />
+    <Property Name="RotInerna_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotInerna_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotExterna_Direita" Type="Int32" />
+    <Property Name="RotExterna_Esquerda" Type="Int32" />
+    <Property Name="RotExterna_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotExterna_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="responsavel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="dtNascimento" Type="DateTime" Precision="3" />
+    <Property Name="diagnostico" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="qxPrincipal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="hma" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="antoponetria" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="peso" Type="Int32" />
+    <Property Name="altura" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="fc" Type="Int32" />
+    <Property Name="fr" Type="Int32" />
+    <Property Name="pa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="temp" Type="Int32" />
+    <Property Name="estadoGeral" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="locomocao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="inspecao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="palpacao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="forcaMuscular" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dor" Type="Int32" />
+    <Property Name="avaliacaoFun" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cirurgiaPrevias" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="medicamentos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="terapiasPrevias" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="terapiasConcomitantes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="examesComplementares" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DiagnosticoFisioterapeutico" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Objetivo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="antecendetesFam" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Pe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Inversao_Direita" Type="Int32" />
+    <Property Name="Inversao_Esquerda" Type="Int32" />
+    <Property Name="Inversao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Inversao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Eversao_Direita" Type="Int32" />
+    <Property Name="Eversao_Esquerda" Type="Int32" />
+    <Property Name="Eversao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Eversao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Quadril">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Flexao_Direita" Type="Int32" />
+    <Property Name="Flexao_Esquerda" Type="Int32" />
+    <Property Name="Flexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Flexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Direita" Type="Int32" />
+    <Property Name="Extensao_Esquerda" Type="Int32" />
+    <Property Name="Extensao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Extensao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Abducao_Direita" Type="Int32" />
+    <Property Name="Abducao_Esquerda" Type="Int32" />
+    <Property Name="Abducao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Abducao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Aducao_Direita" Type="Int32" />
+    <Property Name="Aducao_Esquerda" Type="Int32" />
+    <Property Name="Aducao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Aducao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotInerna_Direita" Type="Int32" />
+    <Property Name="RotInerna_Esquerda" Type="Int32" />
+    <Property Name="RotInerna_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotInerna_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotExterna_Direita" Type="Int32" />
+    <Property Name="RotExterna_Esquerda" Type="Int32" />
+    <Property Name="RotExterna_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RotExterna_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tornozelo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Plantiflexao_Direita" Type="Int32" />
+    <Property Name="Plantiflexao_Esquerda" Type="Int32" />
+    <Property Name="Plantiflexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Plantiflexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dorsiflexao_Direita" Type="Int32" />
+    <Property Name="Dorsiflexao_Esquerda" Type="Int32" />
+    <Property Name="Dorsiflexao_Parametro" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dorsiflexao_Conclusao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MSreplication_options">
+    <Key>
+      <PropertyRef Name="optname" />
+      <PropertyRef Name="value" />
+      <PropertyRef Name="major_version" />
+      <PropertyRef Name="minor_version" />
+      <PropertyRef Name="revision" />
+      <PropertyRef Name="install_failures" />
+    </Key>
+    <Property Name="optname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="value" Type="Boolean" Nullable="false" />
+    <Property Name="major_version" Type="Int32" Nullable="false" />
+    <Property Name="minor_version" Type="Int32" Nullable="false" />
+    <Property Name="revision" Type="Int32" Nullable="false" />
+    <Property Name="install_failures" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_db">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_dbid" Type="Int16" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dbid" Type="Int16" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="version" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_dev">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="low" />
+      <PropertyRef Name="high" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="phyname" />
+    </Key>
+    <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_low" Type="Int32" />
+    <Property Name="xfallback_drive" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="low" Type="Int32" Nullable="false" />
+    <Property Name="high" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phyname" Type="String" MaxLength="127" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_usg">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="segmap" />
+      <PropertyRef Name="lstart" />
+      <PropertyRef Name="sizepg" />
+      <PropertyRef Name="vstart" />
+    </Key>
+    <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_vstart" Type="Int32" />
+    <Property Name="dbid" Type="Int16" Nullable="false" />
+    <Property Name="segmap" Type="Int32" Nullable="false" />
+    <Property Name="lstart" Type="Int32" Nullable="false" />
+    <Property Name="sizepg" Type="Int32" Nullable="false" />
+    <Property Name="vstart" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_monitor">
+    <Key>
+      <PropertyRef Name="lastrun" />
+      <PropertyRef Name="cpu_busy" />
+      <PropertyRef Name="io_busy" />
+      <PropertyRef Name="idle" />
+      <PropertyRef Name="pack_received" />
+      <PropertyRef Name="pack_sent" />
+      <PropertyRef Name="connections" />
+      <PropertyRef Name="pack_errors" />
+      <PropertyRef Name="total_read" />
+      <PropertyRef Name="total_write" />
+      <PropertyRef Name="total_errors" />
+    </Key>
+    <Property Name="lastrun" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cpu_busy" Type="Int32" Nullable="false" />
+    <Property Name="io_busy" Type="Int32" Nullable="false" />
+    <Property Name="idle" Type="Int32" Nullable="false" />
+    <Property Name="pack_received" Type="Int32" Nullable="false" />
+    <Property Name="pack_sent" Type="Int32" Nullable="false" />
+    <Property Name="connections" Type="Int32" Nullable="false" />
+    <Property Name="pack_errors" Type="Int32" Nullable="false" />
+    <Property Name="total_read" Type="Int32" Nullable="false" />
+    <Property Name="total_write" Type="Int32" Nullable="false" />
+    <Property Name="total_errors" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="masterEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adm_Cervical" EntityType="Self.Adm_Cervical" />
+    <EntitySet Name="Adm_Cotovelo" EntityType="Self.Adm_Cotovelo" />
+    <EntitySet Name="Adm_Punho" EntityType="Self.Adm_Punho" />
+    <EntitySet Name="Adm_Tronco" EntityType="Self.Adm_Tronco" />
+    <EntitySet Name="Joelho" EntityType="Self.Joelho" />
+    <EntitySet Name="Ombro" EntityType="Self.Ombro" />
+    <EntitySet Name="Paciente" EntityType="Self.Paciente" />
+    <EntitySet Name="Pe" EntityType="Self.Pe" />
+    <EntitySet Name="Quadril" EntityType="Self.Quadril" />
+    <EntitySet Name="Tornozelo" EntityType="Self.Tornozelo" />
+    <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" />
+    <EntitySet Name="spt_fallback_db" EntityType="Self.spt_fallback_db" />
+    <EntitySet Name="spt_fallback_dev" EntityType="Self.spt_fallback_dev" />
+    <EntitySet Name="spt_fallback_usg" EntityType="Self.spt_fallback_usg" />
+    <EntitySet Name="spt_monitor" EntityType="Self.spt_monitor" />
+  </EntityContainer>
+</Schema>

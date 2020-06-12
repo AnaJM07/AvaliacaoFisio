@@ -91,21 +91,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FisioReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FisioReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="masterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Adm_Cervical.cs" />
     <Compile Include="Models\Adm_Cotovelo.cs" />
     <Compile Include="Models\Adm_Punho.cs" />
     <Compile Include="Models\Adm_Tronco.cs" />
-    <Compile Include="DsFisio.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsFisio.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Fisio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,10 @@
     <Compile Include="Models\Quadril.cs" />
     <Compile Include="Models\Tornozelo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fisio.resx">
       <DependentUpon>Fisio.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,16 +148,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DsFisio.xsc">
-      <DependentUpon>DsFisio.xsd</DependentUpon>
+    <None Include="masterDataSet.xsc">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DsFisio.xsd">
+    <None Include="masterDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsFisio.Designer.cs</LastGenOutput>
+      <LastGenOutput>masterDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DsFisio.xss">
-      <DependentUpon>DsFisio.xsd</DependentUpon>
+    <None Include="masterDataSet.xss">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities1">
+    <EntitySetMapping Name="Adm_Cervical">
+      <EntityTypeMapping TypeName="masterModel.Adm_Cervical">
+        <MappingFragment StoreEntitySet="Adm_Cervical">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+          <ScalarProperty Name="Rotacao_Direita" ColumnName="Rotacao_Direita" />
+          <ScalarProperty Name="Rotacao_Esquerda" ColumnName="Rotacao_Esquerda" />
+          <ScalarProperty Name="Rotacao_Parametro" ColumnName="Rotacao_Parametro" />
+          <ScalarProperty Name="Rotacao_Conclusao" ColumnName="Rotacao_Conclusao" />
+          <ScalarProperty Name="Inclinacao_Direita" ColumnName="Inclinacao_Direita" />
+          <ScalarProperty Name="Inclinacao_Esquerda" ColumnName="Inclinacao_Esquerda" />
+          <ScalarProperty Name="Inclinacao_Parametro" ColumnName="Inclinacao_Parametro" />
+          <ScalarProperty Name="Inclinacao_Conclusao" ColumnName="Inclinacao_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adm_Cotovelo">
+      <EntityTypeMapping TypeName="masterModel.Adm_Cotovelo">
+        <MappingFragment StoreEntitySet="Adm_Cotovelo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+          <ScalarProperty Name="Pronacao_Direita" ColumnName="Pronacao_Direita" />
+          <ScalarProperty Name="Pronacao_Esquerda" ColumnName="Pronacao_Esquerda" />
+          <ScalarProperty Name="Pronacao_Parametro" ColumnName="Pronacao_Parametro" />
+          <ScalarProperty Name="Pronacao_Conclusao" ColumnName="Pronacao_Conclusao" />
+          <ScalarProperty Name="Supinacao_Direita" ColumnName="Supinacao_Direita" />
+          <ScalarProperty Name="Supinacao_Esquerda" ColumnName="Supinacao_Esquerda" />
+          <ScalarProperty Name="Supinacao_Parametro" ColumnName="Supinacao_Parametro" />
+          <ScalarProperty Name="Supinacao_Conclusao" ColumnName="Supinacao_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adm_Punho">
+      <EntityTypeMapping TypeName="masterModel.Adm_Punho">
+        <MappingFragment StoreEntitySet="Adm_Punho">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+          <ScalarProperty Name="DesvUlnar_Direita" ColumnName="DesvUlnar_Direita" />
+          <ScalarProperty Name="DesvUlnar_Esquerda" ColumnName="DesvUlnar_Esquerda" />
+          <ScalarProperty Name="DesvUlnar_Parametro" ColumnName="DesvUlnar_Parametro" />
+          <ScalarProperty Name="DesvUlnar_Conclusao" ColumnName="DesvUlnar_Conclusao" />
+          <ScalarProperty Name="DesvRadial_Direita" ColumnName="DesvRadial_Direita" />
+          <ScalarProperty Name="DesvRadial_Esquerda" ColumnName="DesvRadial_Esquerda" />
+          <ScalarProperty Name="DesvRadial_Parametro" ColumnName="DesvRadial_Parametro" />
+          <ScalarProperty Name="DesvRadial_Conclusao" ColumnName="DesvRadial_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adm_Tronco">
+      <EntityTypeMapping TypeName="masterModel.Adm_Tronco">
+        <MappingFragment StoreEntitySet="Adm_Tronco">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+          <ScalarProperty Name="Rotacao_Direita" ColumnName="Rotacao_Direita" />
+          <ScalarProperty Name="Rotacao_Esquerda" ColumnName="Rotacao_Esquerda" />
+          <ScalarProperty Name="Rotacao_Parametro" ColumnName="Rotacao_Parametro" />
+          <ScalarProperty Name="Rotacao_Conclusao" ColumnName="Rotacao_Conclusao" />
+          <ScalarProperty Name="Inclinacao_Direita" ColumnName="Inclinacao_Direita" />
+          <ScalarProperty Name="Inclinacao_Esquerda" ColumnName="Inclinacao_Esquerda" />
+          <ScalarProperty Name="Inclinacao_Parametro" ColumnName="Inclinacao_Parametro" />
+          <ScalarProperty Name="Inclinacao_Conclusao" ColumnName="Inclinacao_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Joelho">
+      <EntityTypeMapping TypeName="masterModel.Joelho">
+        <MappingFragment StoreEntitySet="Joelho">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ombro">
+      <EntityTypeMapping TypeName="masterModel.Ombro">
+        <MappingFragment StoreEntitySet="Ombro">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+          <ScalarProperty Name="Abducao_Direita" ColumnName="Abducao_Direita" />
+          <ScalarProperty Name="Abducao_Esquerda" ColumnName="Abducao_Esquerda" />
+          <ScalarProperty Name="Abducao_Parametro" ColumnName="Abducao_Parametro" />
+          <ScalarProperty Name="Abducao_Conclusao" ColumnName="Abducao_Conclusao" />
+          <ScalarProperty Name="Aducao_Direita" ColumnName="Aducao_Direita" />
+          <ScalarProperty Name="Aducao_Esquerda" ColumnName="Aducao_Esquerda" />
+          <ScalarProperty Name="Aducao_Parametro" ColumnName="Aducao_Parametro" />
+          <ScalarProperty Name="Aducao_Conclusao" ColumnName="Aducao_Conclusao" />
+          <ScalarProperty Name="RotInerna_Direita" ColumnName="RotInerna_Direita" />
+          <ScalarProperty Name="RotInerna_Esquerda" ColumnName="RotInerna_Esquerda" />
+          <ScalarProperty Name="RotInerna_Parametro" ColumnName="RotInerna_Parametro" />
+          <ScalarProperty Name="RotInerna_Conclusao" ColumnName="RotInerna_Conclusao" />
+          <ScalarProperty Name="RotExterna_Direita" ColumnName="RotExterna_Direita" />
+          <ScalarProperty Name="RotExterna_Esquerda" ColumnName="RotExterna_Esquerda" />
+          <ScalarProperty Name="RotExterna_Parametro" ColumnName="RotExterna_Parametro" />
+          <ScalarProperty Name="RotExterna_Conclusao" ColumnName="RotExterna_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="masterModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="responsavel" ColumnName="responsavel" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="dtNascimento" ColumnName="dtNascimento" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+          <ScalarProperty Name="qxPrincipal" ColumnName="qxPrincipal" />
+          <ScalarProperty Name="hma" ColumnName="hma" />
+          <ScalarProperty Name="antoponetria" ColumnName="antoponetria" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="altura" ColumnName="altura" />
+          <ScalarProperty Name="fc" ColumnName="fc" />
+          <ScalarProperty Name="fr" ColumnName="fr" />
+          <ScalarProperty Name="pa" ColumnName="pa" />
+          <ScalarProperty Name="temp" ColumnName="temp" />
+          <ScalarProperty Name="estadoGeral" ColumnName="estadoGeral" />
+          <ScalarProperty Name="locomocao" ColumnName="locomocao" />
+          <ScalarProperty Name="inspecao" ColumnName="inspecao" />
+          <ScalarProperty Name="palpacao" ColumnName="palpacao" />
+          <ScalarProperty Name="forcaMuscular" ColumnName="forcaMuscular" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dor" ColumnName="dor" />
+          <ScalarProperty Name="avaliacaoFun" ColumnName="avaliacaoFun" />
+          <ScalarProperty Name="cirurgiaPrevias" ColumnName="cirurgiaPrevias" />
+          <ScalarProperty Name="medicamentos" ColumnName="medicamentos" />
+          <ScalarProperty Name="terapiasPrevias" ColumnName="terapiasPrevias" />
+          <ScalarProperty Name="terapiasConcomitantes" ColumnName="terapiasConcomitantes" />
+          <ScalarProperty Name="examesComplementares" ColumnName="examesComplementares" />
+          <ScalarProperty Name="DiagnosticoFisioterapeutico" ColumnName="DiagnosticoFisioterapeutico" />
+          <ScalarProperty Name="Objetivo" ColumnName="Objetivo" />
+          <ScalarProperty Name="antecendetesFam" ColumnName="antecendetesFam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pe">
+      <EntityTypeMapping TypeName="masterModel.Pe">
+        <MappingFragment StoreEntitySet="Pe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Inversao_Direita" ColumnName="Inversao_Direita" />
+          <ScalarProperty Name="Inversao_Esquerda" ColumnName="Inversao_Esquerda" />
+          <ScalarProperty Name="Inversao_Parametro" ColumnName="Inversao_Parametro" />
+          <ScalarProperty Name="Inversao_Conclusao" ColumnName="Inversao_Conclusao" />
+          <ScalarProperty Name="Eversao_Direita" ColumnName="Eversao_Direita" />
+          <ScalarProperty Name="Eversao_Esquerda" ColumnName="Eversao_Esquerda" />
+          <ScalarProperty Name="Eversao_Parametro" ColumnName="Eversao_Parametro" />
+          <ScalarProperty Name="Eversao_Conclusao" ColumnName="Eversao_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quadril">
+      <EntityTypeMapping TypeName="masterModel.Quadril">
+        <MappingFragment StoreEntitySet="Quadril">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Flexao_Direita" ColumnName="Flexao_Direita" />
+          <ScalarProperty Name="Flexao_Esquerda" ColumnName="Flexao_Esquerda" />
+          <ScalarProperty Name="Flexao_Parametro" ColumnName="Flexao_Parametro" />
+          <ScalarProperty Name="Flexao_Conclusao" ColumnName="Flexao_Conclusao" />
+          <ScalarProperty Name="Extensao_Direita" ColumnName="Extensao_Direita" />
+          <ScalarProperty Name="Extensao_Esquerda" ColumnName="Extensao_Esquerda" />
+          <ScalarProperty Name="Extensao_Parametro" ColumnName="Extensao_Parametro" />
+          <ScalarProperty Name="Extensao_Conclusao" ColumnName="Extensao_Conclusao" />
+          <ScalarProperty Name="Abducao_Direita" ColumnName="Abducao_Direita" />
+          <ScalarProperty Name="Abducao_Esquerda" ColumnName="Abducao_Esquerda" />
+          <ScalarProperty Name="Abducao_Parametro" ColumnName="Abducao_Parametro" />
+          <ScalarProperty Name="Abducao_Conclusao" ColumnName="Abducao_Conclusao" />
+          <ScalarProperty Name="Aducao_Direita" ColumnName="Aducao_Direita" />
+          <ScalarProperty Name="Aducao_Esquerda" ColumnName="Aducao_Esquerda" />
+          <ScalarProperty Name="Aducao_Parametro" ColumnName="Aducao_Parametro" />
+          <ScalarProperty Name="Aducao_Conclusao" ColumnName="Aducao_Conclusao" />
+          <ScalarProperty Name="RotInerna_Direita" ColumnName="RotInerna_Direita" />
+          <ScalarProperty Name="RotInerna_Esquerda" ColumnName="RotInerna_Esquerda" />
+          <ScalarProperty Name="RotInerna_Parametro" ColumnName="RotInerna_Parametro" />
+          <ScalarProperty Name="RotInerna_Conclusao" ColumnName="RotInerna_Conclusao" />
+          <ScalarProperty Name="RotExterna_Direita" ColumnName="RotExterna_Direita" />
+          <ScalarProperty Name="RotExterna_Esquerda" ColumnName="RotExterna_Esquerda" />
+          <ScalarProperty Name="RotExterna_Parametro" ColumnName="RotExterna_Parametro" />
+          <ScalarProperty Name="RotExterna_Conclusao" ColumnName="RotExterna_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tornozelo">
+      <EntityTypeMapping TypeName="masterModel.Tornozelo">
+        <MappingFragment StoreEntitySet="Tornozelo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Plantiflexao_Direita" ColumnName="Plantiflexao_Direita" />
+          <ScalarProperty Name="Plantiflexao_Esquerda" ColumnName="Plantiflexao_Esquerda" />
+          <ScalarProperty Name="Plantiflexao_Parametro" ColumnName="Plantiflexao_Parametro" />
+          <ScalarProperty Name="Plantiflexao_Conclusao" ColumnName="Plantiflexao_Conclusao" />
+          <ScalarProperty Name="Dorsiflexao_Direita" ColumnName="Dorsiflexao_Direita" />
+          <ScalarProperty Name="Dorsiflexao_Esquerda" ColumnName="Dorsiflexao_Esquerda" />
+          <ScalarProperty Name="Dorsiflexao_Parametro" ColumnName="Dorsiflexao_Parametro" />
+          <ScalarProperty Name="Dorsiflexao_Conclusao" ColumnName="Dorsiflexao_Conclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSreplication_options">
+      <EntityTypeMapping TypeName="masterModel.MSreplication_options">
+        <MappingFragment StoreEntitySet="MSreplication_options">
+          <ScalarProperty Name="optname" ColumnName="optname" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="major_version" ColumnName="major_version" />
+          <ScalarProperty Name="minor_version" ColumnName="minor_version" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="install_failures" ColumnName="install_failures" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_db">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_db">
+        <MappingFragment StoreEntitySet="spt_fallback_db">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_dbid" ColumnName="xfallback_dbid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dbid" ColumnName="dbid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_dev">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_dev">
+        <MappingFragment StoreEntitySet="spt_fallback_dev">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_low" ColumnName="xfallback_low" />
+          <ScalarProperty Name="xfallback_drive" ColumnName="xfallback_drive" />
+          <ScalarProperty Name="low" ColumnName="low" />
+          <ScalarProperty Name="high" ColumnName="high" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phyname" ColumnName="phyname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_usg">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_usg">
+        <MappingFragment StoreEntitySet="spt_fallback_usg">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_vstart" ColumnName="xfallback_vstart" />
+          <ScalarProperty Name="dbid" ColumnName="dbid" />
+          <ScalarProperty Name="segmap" ColumnName="segmap" />
+          <ScalarProperty Name="lstart" ColumnName="lstart" />
+          <ScalarProperty Name="sizepg" ColumnName="sizepg" />
+          <ScalarProperty Name="vstart" ColumnName="vstart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_monitor">
+      <EntityTypeMapping TypeName="masterModel.spt_monitor">
+        <MappingFragment StoreEntitySet="spt_monitor">
+          <ScalarProperty Name="lastrun" ColumnName="lastrun" />
+          <ScalarProperty Name="cpu_busy" ColumnName="cpu_busy" />
+          <ScalarProperty Name="io_busy" ColumnName="io_busy" />
+          <ScalarProperty Name="idle" ColumnName="idle" />
+          <ScalarProperty Name="pack_received" ColumnName="pack_received" />
+          <ScalarProperty Name="pack_sent" ColumnName="pack_sent" />
+          <ScalarProperty Name="connections" ColumnName="connections" />
+          <ScalarProperty Name="pack_errors" ColumnName="pack_errors" />
+          <ScalarProperty Name="total_read" ColumnName="total_read" />
+          <ScalarProperty Name="total_write" ColumnName="total_write" />
+          <ScalarProperty Name="total_errors" ColumnName="total_errors" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

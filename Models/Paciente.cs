@@ -35,7 +35,7 @@ namespace FisioForms
         public string antoponetria { get; set; }
 
         [StringLength(255)]
-        public string antecedentesFam { get; set; }
+        public string antecendetesFam{ get; set; }
 
         public int? peso { get; set; }
 
