@@ -231,7 +231,7 @@
             this.txtInclinacaoDOmbro = new System.Windows.Forms.TextBox();
             this.txtInclinacaoEOmbro = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab_Grid = new System.Windows.Forms.TabControl();
             this.tbpageDadosP = new System.Windows.Forms.TabPage();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.DTPDataNasc = new System.Windows.Forms.DateTimePicker();
@@ -260,6 +260,8 @@
             this.peTableAdapter1 = new FisioForms.masterDataSetTableAdapters.PeTableAdapter();
             this.quadrilTableAdapter = new FisioForms.masterDataSetTableAdapters.QuadrilTableAdapter();
             this.tornozeloTableAdapter = new FisioForms.masterDataSetTableAdapters.TornozeloTableAdapter();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvPacientes = new System.Windows.Forms.DataGridView();
             inversao_DireitaLabel = new System.Windows.Forms.Label();
             inversao_EsquerdaLabel = new System.Windows.Forms.Label();
             eversao_DireitaLabel = new System.Windows.Forms.Label();
@@ -376,11 +378,13 @@
             this.Cervical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adm_CervicalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tab_Grid.SuspendLayout();
             this.tbpageDadosP.SuspendLayout();
             this.tbpageDiagnostico.SuspendLayout();
             this.tbpageADM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // inversao_DireitaLabel
@@ -2209,18 +2213,19 @@
             this.pictureBox1.TabIndex = 227;
             this.pictureBox1.TabStop = false;
             // 
-            // tabControl1
+            // tab_Grid
             // 
-            this.tabControl1.Controls.Add(this.tbpageDadosP);
-            this.tabControl1.Controls.Add(this.tbpageDiagnostico);
-            this.tabControl1.Controls.Add(this.tbpageADM);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(21, 9);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(917, 718);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.tabControl1.TabIndex = 228;
+            this.tab_Grid.Controls.Add(this.tbpageDadosP);
+            this.tab_Grid.Controls.Add(this.tbpageDiagnostico);
+            this.tab_Grid.Controls.Add(this.tbpageADM);
+            this.tab_Grid.Controls.Add(this.tabPage1);
+            this.tab_Grid.Controls.Add(this.tabPage2);
+            this.tab_Grid.Location = new System.Drawing.Point(21, 9);
+            this.tab_Grid.Name = "tab_Grid";
+            this.tab_Grid.SelectedIndex = 0;
+            this.tab_Grid.Size = new System.Drawing.Size(917, 718);
+            this.tab_Grid.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tab_Grid.TabIndex = 228;
             // 
             // tbpageDadosP
             // 
@@ -2484,6 +2489,25 @@
             // 
             this.tornozeloTableAdapter.ClearBeforeFill = true;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgvPacientes);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(909, 692);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvPacientes
+            // 
+            this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPacientes.Location = new System.Drawing.Point(18, 15);
+            this.dgvPacientes.Name = "dgvPacientes";
+            this.dgvPacientes.Size = new System.Drawing.Size(885, 264);
+            this.dgvPacientes.TabIndex = 0;
+            // 
             // Fisio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2492,7 +2516,7 @@
             this.ClientSize = new System.Drawing.Size(1314, 745);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tab_Grid);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "Fisio";
@@ -2527,13 +2551,15 @@
             this.Cervical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adm_CervicalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tab_Grid.ResumeLayout(false);
             this.tbpageDadosP.ResumeLayout(false);
             this.tbpageDadosP.PerformLayout();
             this.tbpageDiagnostico.ResumeLayout(false);
             this.tbpageDiagnostico.PerformLayout();
             this.tbpageADM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2629,7 +2655,7 @@
         private System.Windows.Forms.TextBox txtInclinacaoDOmbro;
         private System.Windows.Forms.TextBox txtInclinacaoEOmbro;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tab_Grid;
         private System.Windows.Forms.TabPage tbpageDadosP;
         private System.Windows.Forms.TabPage tbpageDiagnostico;
         private System.Windows.Forms.TextBox hmaTextBox;
@@ -2683,6 +2709,7 @@
         private masterDataSetTableAdapters.TornozeloTableAdapter tornozeloTableAdapter;
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
-
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dgvPacientes;
     }
 }

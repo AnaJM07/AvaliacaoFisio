@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
@@ -31,6 +32,8 @@ namespace FisioForms
         {
             InitializeComponent();
             _context = new FisioModel();
+            var Dados = _context.Paciente.ToList();
+            dgvPacientes.DataSource = Dados;
             InstanciarObj();
         }
 

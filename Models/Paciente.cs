@@ -103,5 +103,23 @@ namespace FisioForms
 
         [StringLength(255)]
         public string Objetivo { get; set; }
+
+        //public Adm_Cervical Adm_Cervical { get; set; }
+
+        //public Adm_Cotovelo Adm_Cotovelo { get; set; }
+
+        //public Adm_Punho Adm_Punho { get; set; }
+
+        //public Adm_Tronco Adm_Tronco { get; set; }
+
+        //public Joelho Joelho { get; set; }
+
+        //public Ombro Ombro { get; set; }
+
+        //public Pe Pe { get; set; }
+
+        //public Quadril Quadril { get; set; }
+
+        //public Tornozelo Tornozelo { get; set; }
     }
 }
