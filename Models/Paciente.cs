@@ -9,7 +9,8 @@ namespace FisioForms
     [Table("Paciente")]
     public partial class Paciente
     {
-        public int id { get; set; }
+        [Key]
+        public int CdPaciente { get; set; }
 
         [StringLength(50)]
         public string nome { get; set; }
@@ -35,7 +36,7 @@ namespace FisioForms
         public string antoponetria { get; set; }
 
         [StringLength(255)]
-        public string antecendetesFam{ get; set; }
+        public string antecendetesFam { get; set; }
 
         public int? peso { get; set; }
 

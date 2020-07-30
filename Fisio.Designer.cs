@@ -125,7 +125,6 @@
             System.Windows.Forms.Label rotInerna_DireitaLabel1;
             System.Windows.Forms.Label rotInerna_EsquerdaLabel1;
             System.Windows.Forms.Label avaliacaoFunLabel;
-            System.Windows.Forms.Label antecendetesFamLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fisio));
             this.grpPe = new System.Windows.Forms.GroupBox();
             this.inversao_DireitaTextBox = new System.Windows.Forms.TextBox();
@@ -244,12 +243,10 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.tbpageDiagnostico = new System.Windows.Forms.TabPage();
-            this.txtAntecedentesFam = new System.Windows.Forms.TextBox();
             this.avaliacaoFunTextBox = new System.Windows.Forms.TextBox();
             this.hmaTextBox = new System.Windows.Forms.TextBox();
             this.tbpageADM = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.joelhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -263,10 +260,6 @@
             this.peTableAdapter1 = new FisioForms.masterDataSetTableAdapters.PeTableAdapter();
             this.quadrilTableAdapter = new FisioForms.masterDataSetTableAdapters.QuadrilTableAdapter();
             this.tornozeloTableAdapter = new FisioForms.masterDataSetTableAdapters.TornozeloTableAdapter();
-            this.FisioReport2 = new FisioForms.FisioReport();
-            this.fisioReport1 = new FisioForms.FisioReport();
-            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport12 = new FisioForms.CrystalReport1();
             inversao_DireitaLabel = new System.Windows.Forms.Label();
             inversao_EsquerdaLabel = new System.Windows.Forms.Label();
             eversao_DireitaLabel = new System.Windows.Forms.Label();
@@ -363,7 +356,6 @@
             rotInerna_DireitaLabel1 = new System.Windows.Forms.Label();
             rotInerna_EsquerdaLabel1 = new System.Windows.Forms.Label();
             avaliacaoFunLabel = new System.Windows.Forms.Label();
-            antecendetesFamLabel = new System.Windows.Forms.Label();
             this.grpPe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peBindingSource)).BeginInit();
             this.grpCotovelo.SuspendLayout();
@@ -388,7 +380,6 @@
             this.tbpageDadosP.SuspendLayout();
             this.tbpageDiagnostico.SuspendLayout();
             this.tbpageADM.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1255,15 +1246,6 @@
             avaliacaoFunLabel.Size = new System.Drawing.Size(77, 13);
             avaliacaoFunLabel.TabIndex = 213;
             avaliacaoFunLabel.Text = "avaliacao Fun:";
-            // 
-            // antecendetesFamLabel
-            // 
-            antecendetesFamLabel.AutoSize = true;
-            antecendetesFamLabel.Location = new System.Drawing.Point(14, 320);
-            antecendetesFamLabel.Name = "antecendetesFamLabel";
-            antecendetesFamLabel.Size = new System.Drawing.Size(98, 13);
-            antecendetesFamLabel.TabIndex = 214;
-            antecendetesFamLabel.Text = "antecendetes Fam:";
             // 
             // grpPe
             // 
@@ -2348,8 +2330,6 @@
             // tbpageDiagnostico
             // 
             this.tbpageDiagnostico.AutoScroll = true;
-            this.tbpageDiagnostico.Controls.Add(antecendetesFamLabel);
-            this.tbpageDiagnostico.Controls.Add(this.txtAntecedentesFam);
             this.tbpageDiagnostico.Controls.Add(avaliacaoFunLabel);
             this.tbpageDiagnostico.Controls.Add(this.avaliacaoFunTextBox);
             this.tbpageDiagnostico.Controls.Add(hmaLabel);
@@ -2396,14 +2376,6 @@
             this.tbpageDiagnostico.TabIndex = 1;
             this.tbpageDiagnostico.Text = "Diagnostico";
             // 
-            // txtAntecedentesFam
-            // 
-            this.txtAntecedentesFam.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "antecedentesFam", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtAntecedentesFam.Location = new System.Drawing.Point(118, 317);
-            this.txtAntecedentesFam.Name = "txtAntecedentesFam";
-            this.txtAntecedentesFam.Size = new System.Drawing.Size(347, 20);
-            this.txtAntecedentesFam.TabIndex = 215;
-            // 
             // avaliacaoFunTextBox
             // 
             this.avaliacaoFunTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource1, "avaliacaoFun", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -2440,8 +2412,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.crystalReportViewer2);
-            this.tabPage1.Controls.Add(this.crystalReportViewer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -2449,17 +2419,6 @@
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(903, 686);
-            this.crystalReportViewer1.TabIndex = 0;
             // 
             // btnSalvar
             // 
@@ -2525,20 +2484,6 @@
             // 
             this.tornozeloTableAdapter.ClearBeforeFill = true;
             // 
-            // crystalReportViewer2
-            // 
-            this.crystalReportViewer2.ActiveViewIndex = 0;
-            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = this.CrystalReport12;
-            this.crystalReportViewer2.Size = new System.Drawing.Size(903, 686);
-            this.crystalReportViewer2.TabIndex = 1;
-            this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.crystalReportViewer2.Load += new System.EventHandler(this.crystalReportViewer2_Load);
-            // 
             // Fisio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2553,7 +2498,6 @@
             this.Name = "Fisio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fisio";
-            this.Load += new System.EventHandler(this.Fisio_Load);
             this.grpPe.ResumeLayout(false);
             this.grpPe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peBindingSource)).EndInit();
@@ -2589,7 +2533,6 @@
             this.tbpageDiagnostico.ResumeLayout(false);
             this.tbpageDiagnostico.PerformLayout();
             this.tbpageADM.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.joelhoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2720,13 +2663,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private FisioReport FisioReport2;
+       
         private System.Windows.Forms.TextBox avaliacaoFunTextBox;
         private masterDataSetTableAdapters.Adm_PunhoTableAdapter adm_PunhoTableAdapter1;
         private masterDataSetTableAdapters.Adm_TroncoTableAdapter adm_TroncoTableAdapter1;
         private masterDataSetTableAdapters.QuadrilTableAdapter quadrilTableAdapter1;
         private masterDataSetTableAdapters.TornozeloTableAdapter tornozeloTableAdapter1;
-        private System.Windows.Forms.TextBox txtAntecedentesFam;
         private System.Windows.Forms.BindingSource pacienteBindingSource1;
         private masterDataSet masterDataSet2;
         private masterDataSetTableAdapters.Adm_CervicalTableAdapter adm_CervicalTableAdapter1;
@@ -2739,8 +2681,8 @@
         private masterDataSetTableAdapters.PeTableAdapter peTableAdapter1;
         private masterDataSetTableAdapters.QuadrilTableAdapter quadrilTableAdapter;
         private masterDataSetTableAdapters.TornozeloTableAdapter tornozeloTableAdapter;
-        private FisioReport fisioReport1;
+
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
-        private CrystalReport1 CrystalReport12;
+
     }
 }

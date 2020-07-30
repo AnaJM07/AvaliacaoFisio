@@ -12,7 +12,7 @@ namespace FisioForms
         public int id { get; set; }
 
         public int? Flexao_Direita { get; set; }
-
+//C:\Users\Silva\Desktop\GitHub\AnaJM07\AndreFisio\Models\Quadril.cs
         public int? Flexao_Esquerda { get; set; }
 
         [StringLength(255)]
@@ -70,5 +70,10 @@ namespace FisioForms
 
         [StringLength(255)]
         public string RotExterna_Conclusao { get; set; }
+
+        public int CdPaciente { get; set; }
+
+        [ForeignKey("CdPaciente")]
+        public Paciente Paciente { get; set; }
     }
 }

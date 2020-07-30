@@ -16,14 +16,14 @@ namespace FisioForms {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class FisioReport : ReportClass {
+    public class RelatorioPaciente : ReportClass {
         
-        public FisioReport() {
+        public RelatorioPaciente() {
         }
         
         public override string ResourceName {
             get {
-                return "FisioReport.rpt";
+                return "RelatorioPaciente.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace FisioForms {
         
         public override string FullResourceName {
             get {
-                return "FisioForms.FisioReport.rpt";
+                return "FisioForms.RelatorioPaciente.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace FisioForms {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedFisioReport : Component, ICachedReport {
+    public class CachedRelatorioPaciente : Component, ICachedReport {
         
-        public CachedFisioReport() {
+        public CachedRelatorioPaciente() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace FisioForms {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            FisioReport rpt = new FisioReport();
+            RelatorioPaciente rpt = new RelatorioPaciente();
             rpt.Site = this.Site;
             return rpt;
         }

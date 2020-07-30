@@ -49,5 +49,10 @@ namespace FisioForms
 
         [StringLength(255)]
         public string Supinacao_Conclusao { get; set; }
+
+        public int CdPaciente { get; set; }
+
+        [ForeignKey("CdPaciente")]
+        public Paciente Paciente { get; set; }
     }
 }
